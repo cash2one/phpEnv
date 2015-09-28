@@ -1,17 +1,17 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 13:00:51
+<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 16:23:50
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:342752315608c98338ace4_80134372%%*/
+/*%%SmartyHeaderCode:13435499315608f916d5fc38_68071224%%*/
 $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_5608c9833d2b20_16931831',
+  'unifunc' => 'content_5608f916dafe32_45787890',
   'file_dependency' => 
   array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1443416338,
+      1 => 1443428600,
       2 => 'file',
     ),
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'isChild' => false,
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5608c9833d2b20_16931831')) {
-function content_5608c9833d2b20_16931831 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '342752315608c98338ace4_80134372';
+if ($_valid && !is_callable('content_5608f916dafe32_45787890')) {
+function content_5608f916dafe32_45787890 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '13435499315608f916d5fc38_68071224';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -117,7 +117,8 @@ $_smarty_tpl->compiled->nocache_hash = '342752315608c98338ace4_80134372';
 			},
 			init : function(func){
 				var obj = {
-					data : this.data
+					data : this.data,
+					container:document
 				};
 				func.call(obj);
 			}

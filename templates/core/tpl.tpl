@@ -82,7 +82,8 @@
 			},
 			init : function(func){
 				var obj = {
-					data : this.data
+					data : this.data,
+					container:document
 				};
 				func.call(obj);
 			}
