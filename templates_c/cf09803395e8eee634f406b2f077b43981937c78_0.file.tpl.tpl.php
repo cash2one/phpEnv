@@ -1,17 +1,17 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-07 21:16:46
+<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 13:00:51
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:33913381855ed8e3e6c4582_83880597%%*/
+/*%%SmartyHeaderCode:342752315608c98338ace4_80134372%%*/
 $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_55ed8e3e746364_87044093',
+  'unifunc' => 'content_5608c9833d2b20_16931831',
   'file_dependency' => 
   array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1441631804,
+      1 => 1443416338,
       2 => 'file',
     ),
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'isChild' => false,
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_55ed8e3e746364_87044093')) {
-function content_55ed8e3e746364_87044093 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '33913381855ed8e3e6c4582_83880597';
+if ($_valid && !is_callable('content_5608c9833d2b20_16931831')) {
+function content_5608c9833d2b20_16931831 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '342752315608c98338ace4_80134372';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -107,11 +107,28 @@ $_smarty_tpl->compiled->nocache_hash = '33913381855ed8e3e6c4582_83880597';
     <?php echo '</script'; ?>
 >
     <!-- 使用ESL加载器并完成配置 -->
+    <!-- 模拟全局js -->
+	<?php echo '<script'; ?>
+ >
+		window.A = {
+			data : null,
+			setup: function(data){
+				this.data = data;
+			},
+			init : function(func){
+				var obj = {
+					data : this.data
+				};
+				func.call(obj);
+			}
+		};
+	<?php echo '</script'; ?>
+>
 	</head>
 <body>
 
 <div id="page-bd">
-    <div id="results">
+	<div id="results">
 			<?php $_smarty_tpl->_Subtemplate->renderSubtemplate($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0, false, false, false);
 ?>
 
@@ -153,13 +170,14 @@ $_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved_item;
 
 <?php echo '<script'; ?>
  type="text/javascript">
-    $('img[data-imagedelaysrc]').each(function(){
+	 $('img[data-imagedelaysrc]').each(function(){
         this.src = this.getAttribute('data-imagedelaysrc');
         this.removeAttribute('data-imagedelaysrc');
     });
     
 <?php echo '</script'; ?>
 >
+
 
 
 </body></html>

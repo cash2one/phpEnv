@@ -1,11 +1,11 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 11:03:14
+<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 13:00:51
          compiled from "/Users/alan/htdocs/air/templates/tujie/iphone.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:10590631665608adf299b8e9_29027288%%*/
+/*%%SmartyHeaderCode:4232135645608c9833e4653_26760129%%*/
 $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_5608adf2c1bd20_81112204',
+  'unifunc' => 'content_5608c9835868a0_81872209',
   'tpl_function' => 
   array (
     'alaEngine' => 
@@ -15,7 +15,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaEngine_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaEngine_4232135645608c9833e4653_26760129',
     ),
     'alaGetAttribute' => 
     array (
@@ -24,7 +24,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaGetAttribute_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaGetAttribute_4232135645608c9833e4653_26760129',
     ),
     'alaTplInfo' => 
     array (
@@ -33,7 +33,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaTplInfo_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaTplInfo_4232135645608c9833e4653_26760129',
     ),
     'alaDomData' => 
     array (
@@ -42,7 +42,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaDomData_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaDomData_4232135645608c9833e4653_26760129',
     ),
     'alaTcUrl' => 
     array (
@@ -51,7 +51,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaTcUrl_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaTcUrl_4232135645608c9833e4653_26760129',
     ),
     'alaModuleStart' => 
     array (
@@ -60,7 +60,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaModuleStart_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaModuleStart_4232135645608c9833e4653_26760129',
     ),
     'alaModuleEnd' => 
     array (
@@ -69,7 +69,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaModuleEnd_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaModuleEnd_4232135645608c9833e4653_26760129',
     ),
     'alaModule' => 
     array (
@@ -78,7 +78,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaModule_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaModule_4232135645608c9833e4653_26760129',
     ),
     'alaName' => 
     array (
@@ -87,7 +87,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_alaName_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_alaName_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_recommend' => 
     array (
@@ -96,7 +96,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_recommend_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_recommend_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_box_adaptive_prefix' => 
     array (
@@ -105,7 +105,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_box_adaptive_prefix_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_box_adaptive_prefix_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_box_adaptive_suffix' => 
     array (
@@ -114,7 +114,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_box_adaptive_suffix_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_box_adaptive_suffix_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_build_url' => 
     array (
@@ -123,7 +123,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_build_url_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_build_url_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_img_delay' => 
     array (
@@ -132,7 +132,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_img_delay_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_img_delay_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_text_inline' => 
     array (
@@ -141,7 +141,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_text_inline_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_text_inline_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_title' => 
     array (
@@ -150,7 +150,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_title_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_title_4232135645608c9833e4653_26760129',
     ),
     'fe_fn_c_showUrl' => 
     array (
@@ -159,7 +159,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       ),
       'compiled_filepath' => '/Users/alan/htdocs/air/templates_c/2ce0ef5bae70b48e5a9d194f1394bb260e99a94a_0.file.iphone.tpl.php',
       'uid' => '8e404b18fbf674ae21a19905d559d3f20fe8f233',
-      'call_name' => 'smarty_template_function_fe_fn_c_showUrl_10590631665608adf299b8e9_29027288',
+      'call_name' => 'smarty_template_function_fe_fn_c_showUrl_4232135645608c9833e4653_26760129',
     ),
   ),
   'file_dependency' => 
@@ -167,7 +167,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2ce0ef5bae70b48e5a9d194f1394bb260e99a94a' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/tujie/iphone.tpl',
-      1 => 1443409392,
+      1 => 1443416420,
       2 => 'file',
     ),
     '8e404b18fbf674ae21a19905d559d3f20fe8f233' => 
@@ -184,42 +184,42 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'isChild' => true,
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5608adf2c1bd20_81112204')) {
-function content_5608adf2c1bd20_81112204 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5608c9835868a0_81872209')) {
+function content_5608c9835868a0_81872209 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_replace')) require_once '/Users/alan/htdocs/air/libs/plugins/modifier.replace.php';
 if (!is_callable('smarty_function_wiseMakeSearchUrl')) require_once '/Users/alan/htdocs/air/libs/plugins/function.wiseMakeSearchUrl.php';
 if (!is_callable('smarty_function_wiseMakeTcUrlNew')) require_once '/Users/alan/htdocs/air/libs/plugins/function.wiseMakeTcUrlNew.php';
 if (!is_callable('smarty_modifier_wordtranscode')) require_once '/Users/alan/htdocs/air/libs/plugins/modifier.wordtranscode.php';
 if (!is_callable('smarty_modifier_hilight_print')) require_once '/Users/alan/htdocs/air/libs/plugins/modifier.hilight_print.php';
 ob_start();
-$_smarty_tpl->compiled->nocache_hash = '10590631665608adf299b8e9_29027288';
+$_smarty_tpl->compiled->nocache_hash = '4232135645608c9833e4653_26760129';
 ?>
 
 
 <?php 
-$_smarty_tpl->_Block->registerBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_data_modifier_21056683145608adf29cb7c6_13383946', 'name' => "data_modifier"));
+$_smarty_tpl->_Block->registerBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_data_modifier_8943471325608c9833f2248_92230360', 'name' => "data_modifier"));
 ?>
 
 
 <?php 
-$_smarty_tpl->_Block->registerBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_content_1617355285608adf29dc119_51802443', 'name' => "content"));
+$_smarty_tpl->_Block->registerBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_content_19811760765608c983400320_86730212', 'name' => "content"));
 ?>
 
 
 <?php ob_end_clean();
 /*  Call merged included template "search/searchaladdin/c_base/iphone.tpl" */
-$_smarty_tpl->_Inline->renderInline($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 1, false, false, 'content_5608adf29e3d12_90152326', '8e404b18fbf674ae21a19905d559d3f20fe8f233');
+$_smarty_tpl->_Inline->renderInline($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 1, false, false, 'content_5608c983406ea7_61687146', '8e404b18fbf674ae21a19905d559d3f20fe8f233');
 /*  End of included template "search/searchaladdin/c_base/iphone.tpl" */
 }
 }
 ?><?php
-/*%%SmartyHeaderCode:10590631665608adf299b8e9_29027288%%*/
+/*%%SmartyHeaderCode:4232135645608c9833e4653_26760129%%*/
 /* file:search/searchaladdin/c_base/iphone.tpl */
-if ($_valid && !is_callable('content_5608adf29e3d12_90152326')) {
-function content_5608adf29e3d12_90152326 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5608c983406ea7_61687146')) {
+function content_5608c983406ea7_61687146 ($_smarty_tpl) {
 ?>
 <?php
-$_smarty_tpl->compiled->nocache_hash = '10590631665608adf299b8e9_29027288';
+$_smarty_tpl->compiled->nocache_hash = '4232135645608c9833e4653_26760129';
 $_smarty_tpl->tpl_vars["alaModuleStart"] = new Smarty_Variable(array(), null, 2);
 $_ptr = $_smarty_tpl->parent; while ($_ptr != null) {$_ptr->tpl_vars["alaModuleStart"] = clone $_smarty_tpl->tpl_vars["alaModuleStart"]; $_ptr = $_ptr->parent; }?>
 <?php $_smarty_tpl->tpl_vars["alaModuleEnd"] = new Smarty_Variable(array(), null, 2);
@@ -248,7 +248,7 @@ $_ptr = $_smarty_tpl->parent; while ($_ptr != null) {$_ptr->tpl_vars["alaModuleJ
 
 
 <?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_alaDom_7965427615608adf2b312f1_05595647', 'name' => "alaDom"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_alaDom_18783804995608c9834fc4d2_51486827', 'name' => "alaDom"));
 ?>
 
 
@@ -273,13 +273,13 @@ $_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'functio
 
 
 <?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_data_modifier_20361061575608adf2bc0b79_74527736', 'name' => "data_modifier"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_data_modifier_5010642245608c983561199_76650949', 'name' => "data_modifier"));
 ?>
 
 
 
 <?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_main_container_2715611015608adf2c19852_57080733', 'name' => "main_container"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_main_container_21280996905608c983584fa3_27097602', 'name' => "main_container"));
 ?>
 
 
@@ -289,13 +289,13 @@ $_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'functio
 
 
 <?php
-/*/%%SmartyNocache:10590631665608adf299b8e9_29027288%%*/
+/*/%%SmartyNocache:4232135645608c9833e4653_26760129%%*/
 }
 }
 ?><?php
-/* block_function_data_modifier_21056683145608adf29cb7c6_13383946  file:tujie/iphone.tpl */
-if (!function_exists('block_function_data_modifier_21056683145608adf29cb7c6_13383946')) {
-function block_function_data_modifier_21056683145608adf29cb7c6_13383946($_smarty_tpl, $block) {?>
+/* block_function_data_modifier_8943471325608c9833f2248_92230360  file:tujie/iphone.tpl */
+if (!function_exists('block_function_data_modifier_8943471325608c9833f2248_92230360')) {
+function block_function_data_modifier_8943471325608c9833f2248_92230360($_smarty_tpl, $block) {?>
     <?php $_smarty_tpl->createLocalArrayVariable('tplData', null, 0);
 $_smarty_tpl->tpl_vars['tplData']->value['showLeftText'] = "开发平台";?>
     <?php $_smarty_tpl->createLocalArrayVariable('tplData', null, 0);
@@ -307,25 +307,27 @@ $_smarty_tpl->tpl_vars['tplData']->value['len'] = 5;?>
 <?php
 }
 }
-/*/ block_function_data_modifier_21056683145608adf29cb7c6_13383946 */
+/*/ block_function_data_modifier_8943471325608c9833f2248_92230360 */
 ?>
 <?php
-/* block_function_content_1617355285608adf29dc119_51802443  file:tujie/iphone.tpl */
-if (!function_exists('block_function_content_1617355285608adf29dc119_51802443')) {
-function block_function_content_1617355285608adf29dc119_51802443($_smarty_tpl, $block) {?><style>.wa-tujie-scrollor{overflow:hidden;position:relative;}.wa-tujie-scrollor ul{width: 100%;height:147px;position:relative;}.wa-tujie-scrollor li{width: 100%;height:147px;display:inline-block;position:absolute;top:0;left:0;}.wa-tujie-scrollor li:nth-of-type(1){background-color:red;}.wa-tujie-scrollor li:nth-of-type(2){background-color:blue;}.wa-tujie-scrollor li:nth-of-type(3){background-color:yellow;}.wa-tujie-scrollor li:nth-of-type(4){background-color:#333;border:#444;}.wa-tujie-scrollor li:nth-of-type(5){background-color:#324333;}.wa-tujie-scrollor li:nth-of-type(6){background-color:red;}.wa-tujie-info{position:absolute;width:100%;bottom:0;right:0;background-color:rgba(0,0,0,0.6);height:27px;line-height:27px;}.wa-tujie-info div{display:inline-block;}.wa-tujie-dots{position:absolute;right:0;bottom:0;margin-right:9px;}.wa-tujie-info .wa-tujie-dots-focus{background-color:#dddfdf;}.wa-tujie-info li{display:inline-block;-webkit-border-radius:50%;border-radius:50%;background-color:#9d9692;margin-right:7px;width:6px;height:6px;}.wa-tujie-text{color:#fff;margin-left:20px;}.wa-tujie-s-left{transition:all ease-out  0.1s;transform: translate(-100%, 0px) translateZ(0px);}.wa-tujie-s-on{transition:all ease-out 0.1s;transform: translate(0px, 0px) translateZ(0px);}.wa-tujie-s-right{transition:all ease-out 0.1s;transform: translate(100%, 0px) translateZ(0px);}</style><div class="c-gap-top wa-tujie-wrapper c-row-tile WA_LOG_GES"><div class="wa-tujie-scrollor"><ul><li data-index="1"></li><li data-index="2"></li><li data-index="3"></li><li data-index="4"></li><li data-index="5"></li></ul></div><div class="wa-tujie-info"><div class="wa-tujie-text c-line-clamp1">花千骨</div><div class="wa-tujie-dots"><li class="wa-tujie-dots-focus"></li><li></li><li></li><li></li><li></li></div></div></div><div class="c-row c-gap-top"><div class="c-span8 c-color-gray-a"><p>主演霍建华</p><p>类型：仙侠，古装</p></div><div class="c-span4"><?php $_smarty_tpl->_Function->callTemplateFunction('fe_fn_c_box_adaptive_prefix', $_smarty_tpl, array('url'=>$_smarty_tpl->tpl_vars['tplData']->value['btnUrl'],'class'=>"c-blocka"), true);?>
+/* block_function_content_19811760765608c983400320_86730212  file:tujie/iphone.tpl */
+if (!function_exists('block_function_content_19811760765608c983400320_86730212')) {
+function block_function_content_19811760765608c983400320_86730212($_smarty_tpl, $block) {?><style>.wa-tujie-scrollor{overflow:hidden;position:relative;}.wa-tujie-scrollor ul{width: 100%;height:147px;position:relative;}.wa-tujie-scrollor li{width: 100%;height:147px;display:inline-block;position:absolute;top:0;left:0;}.wa-tujie-scrollor li:nth-of-type(1){background-color:red;}.wa-tujie-scrollor li:nth-of-type(2){background-color:blue;}.wa-tujie-scrollor li:nth-of-type(3){background-color:yellow;}.wa-tujie-scrollor li:nth-of-type(4){background-color:#333;border:#444;}.wa-tujie-scrollor li:nth-of-type(5){background-color:#324333;}.wa-tujie-scrollor li:nth-of-type(6){background-color:red;}.wa-tujie-info{position:absolute;width:100%;bottom:0;right:0;background-color:rgba(0,0,0,0.6);height:27px;line-height:27px;}.wa-tujie-info div{display:inline-block;}.wa-tujie-dots{position:absolute;right:0;bottom:0;margin-right:9px;}.wa-tujie-info .wa-tujie-dots-focus{background-color:#dddfdf;}.wa-tujie-info li{display:inline-block;-webkit-border-radius:50%;border-radius:50%;background-color:#9d9692;margin-right:7px;width:6px;height:6px;}.wa-tujie-text{color:#fff;margin-left:20px;}.wa-tujie-s-left{transition:all ease-out  0.1s;transform: translate(-100%, 0px) translateZ(0px);}.wa-tujie-s-on{transition:all ease-out 0.1s;transform: translate(0px, 0px) translateZ(0px);}.wa-tujie-s-right{transition:all ease-out 0.1s;transform: translate(100%, 0px) translateZ(0px);}</style><div class="c-gap-top wa-tujie-wrapper c-row-tile WA_LOG_GES"><div class="wa-tujie-scrollor"><ul><li data-index="1"></li><li data-index="2"></li><li data-index="3"></li><li data-index="4"></li><li data-index="5"></li></ul></div><div class="wa-tujie-info"><div class="wa-tujie-text c-line-clamp1">花千骨</div><div class="wa-tujie-dots"><li class="wa-tujie-dots-focus"></li><li></li><li></li><li></li><li></li></div></div></div><div class="c-row c-gap-top"><div class="c-span8 c-color-gray-a"><p>主演霍建华</p><p>类型：仙侠，古装</p></div><div class="c-span4"><?php $_smarty_tpl->_Function->callTemplateFunction('fe_fn_c_box_adaptive_prefix', $_smarty_tpl, array('url'=>$_smarty_tpl->tpl_vars['tplData']->value['btnUrl'],'class'=>"c-blocka"), true);?>
 <div class="c-btn WA_LOG_BTN c-gap-top-small">观看图文</div><?php $_smarty_tpl->_Function->callTemplateFunction('fe_fn_c_box_adaptive_suffix', $_smarty_tpl, array('url'=>$_smarty_tpl->tpl_vars['tplData']->value['btnUrl']), true);?>
-</div></div><?php echo '</script'; ?>
+</div></div><?php echo '<script'; ?>
+>A.setup({len : <?php echo $_smarty_tpl->tpl_vars['tplData']->value['len'];?>
+});<?php echo '</script'; ?>
 ><?php echo '<script'; ?>
- data-merge>var app = (function(window,undefined,$){return {init:function(config){this.setup(config);this.bindTimer();},setup:function(config){var _config = {self : null,timer : null,during: 400,len : 5,realIndex:0,scrollElements:''};for(var key in config){_config[key] = config[key] === "undefined" ?  _config[key] : config[key]};for(var key in _config){this[key] = _config[key];};this.index = this.len - 1;this.lis = $(this.scrollElements).get();this.next();},changeQueen:function(){this.realIndex = this.countRealIndex();if(this.realIndex == 0){var last = this.lis.pop();this.lis.unshift(last);this.index++;this.realIndex++;}if(this.realIndex == this.len - 1 ){var first = this.lis.shift();this.lis.push(first);this.index--;this.realIndex --;}},prev:function(){this.index--;this.changeQueen();this.changePosition();},next:function(){this.index++;this.changeQueen();this.changePosition();},changePosition:function(){var  self = this;$.each(this.lis,function(index,el){if(index == self.realIndex){this.style.cssText = 'z-index:10;transition-timing-function:cubic-bezier(0.1, 0.57, 0.1, 1);transition-duration:402ms; transform: translate(0, 0px) translateZ(0px);';}else if (index<self.realIndex){this.style.cssText = 'z-index:1;transition-timing-function:cubic-bezier(0.1, 0.57, 0.1, 1);transition-duration:402ms; transform: translate(-100%, 0px) translateZ(0px);';}else{this.style.cssText = 'z-index:1;transition-timing-function:cubic-bezier(0.1, 0.57, 0.1, 1);transition-duration:402ms;  transform: translate(100%, 0px) translateZ(0px);';}});},timerHandle:function(){this.next();},bindTimer:function(){this.timer = setInterval(this.timerHandle.bind(this),this.during);},countRealIndex:function(){return  this.index % this.len;},changeDot:function(){var ct = $(this.self.container);ct.find(".wa-tujie-dots li").eq(this.countRealIndex()).addClass("wa-tujie-dots-focus").siblings().removeClass("wa-tujie-dots-focus");}}})(window,undefined,$);app.init({self:this,during:2000,len:5,scrollElements:'.wa-tujie-scrollor ul li'});<?php echo '</script'; ?>
+ data-merge>A.init(function () {var app = (function(window,undefined,$){return {init:function(config){this.setup(config);this.bindTimer();},setup:function(config){var _config = {self : null,timer : null,during: 400,len : 5,realIndex:0,scrollElements:''};for(var key in config){_config[key] = config[key] === "undefined" ?  _config[key] : config[key]};for(var key in _config){this[key] = _config[key];};this.index = this.len - 1;this.lis = $(this.scrollElements).get();this.next();},changeQueen:function(){this.realIndex = this.countRealIndex();if(this.realIndex == 0){var last = this.lis.pop();this.lis.unshift(last);this.index++;this.realIndex++;}if(this.realIndex == this.len - 1 ){var first = this.lis.shift();this.lis.push(first);this.index--;this.realIndex --;}},prev:function(){this.index--;this.changeQueen();this.changePosition();},next:function(){this.index++;this.changeQueen();this.changePosition();},changePosition:function(){var  self = this;$.each(this.lis,function(index,el){if(index == self.realIndex){this.style.cssText = 'z-index:10;transition-timing-function:cubic-bezier(0.1, 0.57, 0.1, 1);transition-duration:402ms; transform: translate(0, 0px) translateZ(0px);';}else if (index<self.realIndex){this.style.cssText = 'z-index:1;transition-timing-function:cubic-bezier(0.1, 0.57, 0.1, 1);transition-duration:402ms; transform: translate(-100%, 0px) translateZ(0px);';}else{this.style.cssText = 'z-index:1;transition-timing-function:cubic-bezier(0.1, 0.57, 0.1, 1);transition-duration:402ms;  transform: translate(100%, 0px) translateZ(0px);';}});},timerHandle:function(){this.next();},bindTimer:function(){this.timer = setInterval(this.timerHandle.bind(this),this.during);},countRealIndex:function(){return  this.index % this.len;},changeDot:function(){var ct = $(this.self.container);ct.find(".wa-tujie-dots li").eq(this.countRealIndex()).addClass("wa-tujie-dots-focus").siblings().removeClass("wa-tujie-dots-focus");}}})(window,undefined,$);app.init({self:this,during:2000,len:this.data.len,scrollElements:'.wa-tujie-scrollor ul li'});});<?php echo '</script'; ?>
 ><?php
 }
 }
-/*/ block_function_content_1617355285608adf29dc119_51802443 */
+/*/ block_function_content_19811760765608c983400320_86730212 */
 ?>
 <?php
-/* smarty_template_function_alaEngine_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaEngine_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaEngine_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaEngine_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaEngine_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaEngine_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('key'=>'','fm'=>''), $params);
 foreach ($params as $key => $value) {
@@ -345,24 +347,24 @@ $_ptr = $_smarty_tpl->parent; while ($_ptr != null) {$_ptr->tpl_vars["_alaFm"] =
 $_ptr = $_smarty_tpl->parent; while ($_ptr != null) {$_ptr->tpl_vars["alaKey"] = clone $_smarty_tpl->tpl_vars["alaKey"]; $_ptr = $_ptr->parent; }?>
 <?php ob_start();
 echo urlencode($_smarty_tpl->tpl_vars['reqData']->value['word']);
-$_tmp1=ob_get_clean();?><?php ob_start();
-echo urlencode($_smarty_tpl->tpl_vars['reqData']->value['baiduid']);
 $_tmp2=ob_get_clean();?><?php ob_start();
+echo urlencode($_smarty_tpl->tpl_vars['reqData']->value['baiduid']);
+$_tmp3=ob_get_clean();?><?php ob_start();
 if ($_smarty_tpl->tpl_vars['alaData']->value['appid']) {
 echo "&laid=";
 echo (string)$_smarty_tpl->tpl_vars['alaData']->value['appid'];
 }
-$_tmp3=ob_get_clean();?><?php ob_start();
+$_tmp4=ob_get_clean();?><?php ob_start();
 if ($_smarty_tpl->tpl_vars['alaData']->value['config']['waplog']) {
 echo "&waplogo=1";
 }
-$_tmp4=ob_get_clean();?><?php ob_start();
+$_tmp5=ob_get_clean();?><?php ob_start();
 if ($_smarty_tpl->tpl_vars['alaData']->value['config']['l']) {
 echo (string)$_smarty_tpl->tpl_vars['alaData']->value['config']['l'];
 } else {
 echo "1";
 }
-$_tmp5=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["fe_var_tc_jump"] = new Smarty_Variable(((string)$_smarty_tpl->tpl_vars['pageData']->value['url']['rsUrlAbs'])."w=".((string)$_smarty_tpl->tpl_vars['reqData']->value['pn'])."_".((string)$_smarty_tpl->tpl_vars['reqData']->value['rn'])."_".$_tmp1."/baiduid=".$_tmp2."/t=".((string)$_smarty_tpl->tpl_vars['pageData']->value['abct'])."/tc?order=".((string)$_smarty_tpl->tpl_vars['alaData']->value['iteration'])."&vit=osres&ref=".((string)$_smarty_tpl->tpl_vars['pageData']->value['pageRef'])."&from=".((string)$_smarty_tpl->tpl_vars['reqData']->value['from'])."&ssid=".((string)$_smarty_tpl->tpl_vars['reqData']->value['ssid'])."&uid=".((string)$_smarty_tpl->tpl_vars['reqData']->value['uid'])."&bd_page_type=".((string)$_smarty_tpl->tpl_vars['reqData']->value['bd_page_type'])."&pu=".((string)$_smarty_tpl->tpl_vars['reqData']->value['pu'])."&lid=".((string)$_smarty_tpl->tpl_vars['reqData']->value['lid']).$_tmp3."&fm=".((string)$_smarty_tpl->tpl_vars['_alaFm']->value).$_tmp4."&l=".$_tmp5."&tj=".((string)$_smarty_tpl->tpl_vars['alaData']->value['enresourceid'])."_".((string)$_smarty_tpl->tpl_vars['alaData']->value['iteration'])."_".((string)$_smarty_tpl->tpl_vars['reqData']->value['pn'])."_".((string)$_smarty_tpl->tpl_vars['reqData']->value['rn'])."_", null, 2);
+$_tmp6=ob_get_clean();?><?php $_smarty_tpl->tpl_vars["fe_var_tc_jump"] = new Smarty_Variable(((string)$_smarty_tpl->tpl_vars['pageData']->value['url']['rsUrlAbs'])."w=".((string)$_smarty_tpl->tpl_vars['reqData']->value['pn'])."_".((string)$_smarty_tpl->tpl_vars['reqData']->value['rn'])."_".$_tmp2."/baiduid=".$_tmp3."/t=".((string)$_smarty_tpl->tpl_vars['pageData']->value['abct'])."/tc?order=".((string)$_smarty_tpl->tpl_vars['alaData']->value['iteration'])."&vit=osres&ref=".((string)$_smarty_tpl->tpl_vars['pageData']->value['pageRef'])."&from=".((string)$_smarty_tpl->tpl_vars['reqData']->value['from'])."&ssid=".((string)$_smarty_tpl->tpl_vars['reqData']->value['ssid'])."&uid=".((string)$_smarty_tpl->tpl_vars['reqData']->value['uid'])."&bd_page_type=".((string)$_smarty_tpl->tpl_vars['reqData']->value['bd_page_type'])."&pu=".((string)$_smarty_tpl->tpl_vars['reqData']->value['pu'])."&lid=".((string)$_smarty_tpl->tpl_vars['reqData']->value['lid']).$_tmp4."&fm=".((string)$_smarty_tpl->tpl_vars['_alaFm']->value).$_tmp5."&l=".$_tmp6."&tj=".((string)$_smarty_tpl->tpl_vars['alaData']->value['enresourceid'])."_".((string)$_smarty_tpl->tpl_vars['alaData']->value['iteration'])."_".((string)$_smarty_tpl->tpl_vars['reqData']->value['pn'])."_".((string)$_smarty_tpl->tpl_vars['reqData']->value['rn'])."_", null, 2);
 $_ptr = $_smarty_tpl->parent; while ($_ptr != null) {$_ptr->tpl_vars["fe_var_tc_jump"] = clone $_smarty_tpl->tpl_vars["fe_var_tc_jump"]; $_ptr = $_ptr->parent; }?>
 <?php foreach (Smarty::$global_tpl_vars as $key => $value){
 if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
@@ -370,13 +372,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaEngine_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaEngine_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaGetAttribute_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaGetAttribute_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaGetAttribute_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaGetAttribute_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaGetAttribute_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaGetAttribute_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('var'=>''), $params);
 foreach ($params as $key => $value) {
@@ -395,13 +397,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaGetAttribute_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaGetAttribute_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaTplInfo_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaTplInfo_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaTplInfo_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaTplInfo_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaTplInfo_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaTplInfo_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
@@ -432,13 +434,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaTplInfo_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaTplInfo_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaDomData_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaDomData_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaDomData_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaDomData_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaDomData_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaDomData_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('class'=>'','data'=>array(),'top'=>0), $params);
 foreach ($params as $key => $value) {
@@ -496,13 +498,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaDomData_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaDomData_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaTcUrl_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaTcUrl_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaTcUrl_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaTcUrl_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaTcUrl_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaTcUrl_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('src'=>'','tj5'=>'l','waplogo'=>'','undecode'=>'','l'=>'1','dict'=>'','laid'=>''), $params);
 foreach ($params as $key => $value) {
@@ -511,7 +513,7 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
 <?php if (is_array($_smarty_tpl->tpl_vars['src']->value) && $_smarty_tpl->tpl_vars['src']->value['query']) {?>
 <?php ob_start();
 echo smarty_function_wiseMakeSearchUrl(array('word'=>$_smarty_tpl->tpl_vars['src']->value['query'],'sa'=>"re_".((string)$_smarty_tpl->tpl_vars['alaData']->value['iteration'])),$_smarty_tpl);
-$_tmp6=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['src'] = new Smarty_Variable($_tmp6, null, 0);?>
+$_tmp7=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['src'] = new Smarty_Variable($_tmp7, null, 0);?>
 <?php }?>
 
 <?php if (!empty($_smarty_tpl->tpl_vars['waplogo']->value) && !empty($_smarty_tpl->tpl_vars['laid']->value)) {?>
@@ -533,13 +535,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaTcUrl_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaTcUrl_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaModuleStart_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaModuleStart_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaModuleStart_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaModuleStart_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaModuleStart_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaModuleStart_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('modName'=>"unknown",'modData'=>array(),'htmlData'=>array(),'parentData'=>array(),'top'=>0), $params);
 foreach ($params as $key => $value) {
@@ -562,13 +564,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaModuleStart_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaModuleStart_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaModuleEnd_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaModuleEnd_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaModuleEnd_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaModuleEnd_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaModuleEnd_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaModuleEnd_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
@@ -581,13 +583,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaModuleEnd_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaModuleEnd_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaModule_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaModule_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaModule_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaModule_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaModule_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaModule_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('modName'=>"unknown",'modData'=>array(),'htmlData'=>array(),'top'=>0,'parentData'=>array()), $params);
 foreach ($params as $key => $value) {
@@ -612,13 +614,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaModule_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaModule_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_alaName_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_alaName_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_alaName_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_alaName_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_alaName_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_alaName_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('s'=>''), $params);
 foreach ($params as $key => $value) {
@@ -634,21 +636,21 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_alaName_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_alaName_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* block_function_alaDom_7965427615608adf2b312f1_05595647  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_alaDom_7965427615608adf2b312f1_05595647')) {
-function block_function_alaDom_7965427615608adf2b312f1_05595647($_smarty_tpl, $block) {
+/* block_function_alaDom_18783804995608c9834fc4d2_51486827  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_alaDom_18783804995608c9834fc4d2_51486827')) {
+function block_function_alaDom_18783804995608c9834fc4d2_51486827($_smarty_tpl, $block) {
 }
 }
-/*/ block_function_alaDom_7965427615608adf2b312f1_05595647 */
+/*/ block_function_alaDom_18783804995608c9834fc4d2_51486827 */
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_recommend_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_recommend_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_recommend_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_recommend_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_recommend_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_recommend_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('hints'=>''), $params);
 foreach ($params as $key => $value) {
@@ -660,13 +662,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_recommend_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_recommend_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_box_adaptive_prefix_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_box_adaptive_prefix_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_box_adaptive_prefix_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_box_adaptive_prefix_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_box_adaptive_prefix_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_box_adaptive_prefix_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('query'=>'','sa'=>'','st'=>'','url'=>'','pl'=>'','tx'=>'','undecode'=>'','ltj'=>'l','laid'=>'','waplogo'=>'','dict'=>'','vmgdb'=>'','xse'=>'','class'=>''), $params);
 foreach ($params as $key => $value) {
@@ -675,7 +677,7 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
 <?php if ($_smarty_tpl->tpl_vars['query']->value) {?>
 	<?php ob_start();
 echo smarty_function_wiseMakeSearchUrl(array('word'=>$_smarty_tpl->tpl_vars['query']->value,'sa'=>(($tmp = @$_smarty_tpl->tpl_vars['sa']->value)===null||$tmp==='' ? "re_".((string)$_smarty_tpl->tpl_vars['alaData']->value['iteration']) : $tmp),'st'=>$_smarty_tpl->tpl_vars['st']->value),$_smarty_tpl);
-$_tmp7=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['url'] = new Smarty_Variable($_tmp7, null, 0);?>
+$_tmp8=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['url'] = new Smarty_Variable($_tmp8, null, 0);?>
 <?php }?>
 <?php if ($_smarty_tpl->tpl_vars['url']->value) {?><a class="<?php echo $_smarty_tpl->tpl_vars['class']->value;?>
 " href="<?php $_smarty_tpl->_Function->callTemplateFunction('alaTcUrl', $_smarty_tpl, array('pl'=>((string)$_smarty_tpl->tpl_vars['pl']->value),'tx'=>$_smarty_tpl->tpl_vars['tx']->value,'src'=>$_smarty_tpl->tpl_vars['url']->value,'undecode'=>$_smarty_tpl->tpl_vars['undecode']->value,'tj5'=>$_smarty_tpl->tpl_vars['ltj']->value,'laid'=>$_smarty_tpl->tpl_vars['laid']->value,'waplogo'=>$_smarty_tpl->tpl_vars['waplogo']->value,'dict'=>$_smarty_tpl->tpl_vars['dict']->value,'vmgdb'=>$_smarty_tpl->tpl_vars['vmgdb']->value), true);?>
@@ -689,13 +691,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_box_adaptive_prefix_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_box_adaptive_prefix_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_box_adaptive_suffix_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_box_adaptive_suffix_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_box_adaptive_suffix_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_box_adaptive_suffix_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_box_adaptive_suffix_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_box_adaptive_suffix_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('url'=>''), $params);
 foreach ($params as $key => $value) {
@@ -712,13 +714,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_box_adaptive_suffix_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_box_adaptive_suffix_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_build_url_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_build_url_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_build_url_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_build_url_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_build_url_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_build_url_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
@@ -730,13 +732,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_build_url_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_build_url_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_img_delay_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_img_delay_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_img_delay_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_img_delay_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_img_delay_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_img_delay_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
@@ -752,13 +754,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_img_delay_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_img_delay_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_text_inline_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_text_inline_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_text_inline_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_text_inline_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_text_inline_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_text_inline_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('query'=>'','sa'=>'','st'=>'','url'=>'','text'=>'','highlight'=>'','l'=>'','pl'=>'','tx'=>'','undecode'=>'','ltj'=>'l','laid'=>'','waplogo'=>'','dict'=>'','vmgdb'=>'','xse'=>''), $params);
 foreach ($params as $key => $value) {
@@ -767,7 +769,7 @@ $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
     <?php if ($_smarty_tpl->tpl_vars['query']->value) {?>
 	    <?php ob_start();
 echo smarty_function_wiseMakeSearchUrl(array('word'=>$_smarty_tpl->tpl_vars['query']->value,'sa'=>"re_".((string)$_smarty_tpl->tpl_vars['alaData']->value['iteration']),'st'=>$_smarty_tpl->tpl_vars['st']->value),$_smarty_tpl);
-$_tmp8=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['url'] = new Smarty_Variable($_tmp8, null, 0);?>
+$_tmp9=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['url'] = new Smarty_Variable($_tmp9, null, 0);?>
     <?php } else { ?>
         <?php $_smarty_tpl->tpl_vars['url'] = new Smarty_Variable($_smarty_tpl->tpl_vars['url']->value, null, 0);?>
     <?php }?>
@@ -780,7 +782,7 @@ $_tmp8=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['url'] = new Smarty_Variabl
 	    
 		<?php ob_start();
 echo htmlspecialchars_decode(smarty_modifier_wordtranscode(smarty_modifier_hilight_print(smarty_modifier_wordtranscode($_smarty_tpl->tpl_vars['text']->value,"UTF-8","GBK"),$_smarty_tpl->tpl_vars['highlight']->value),"GBK","UTF-8"));
-$_tmp9=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['tmpText'] = new Smarty_Variable($_tmp9, null, 0);?>
+$_tmp10=ob_get_clean();?><?php $_smarty_tpl->tpl_vars['tmpText'] = new Smarty_Variable($_tmp10, null, 0);?>
     <?php } else { ?>
 	    <?php $_smarty_tpl->tpl_vars['tmpText'] = new Smarty_Variable($_smarty_tpl->tpl_vars['text']->value, null, 0);?>
     <?php }?>	
@@ -799,13 +801,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_text_inline_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_text_inline_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_title_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_title_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_title_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_title_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_title_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_title_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 foreach ($params as $key => $value) {
 $_smarty_tpl->tpl_vars[$key] = new Smarty_Variable($value);
@@ -818,13 +820,13 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_title_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_title_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* smarty_template_function_fe_fn_c_showUrl_10590631665608adf299b8e9_29027288 */
-if (!function_exists('smarty_template_function_fe_fn_c_showUrl_10590631665608adf299b8e9_29027288')) {
-function smarty_template_function_fe_fn_c_showUrl_10590631665608adf299b8e9_29027288($_smarty_tpl,$params) {
+/* smarty_template_function_fe_fn_c_showUrl_4232135645608c9833e4653_26760129 */
+if (!function_exists('smarty_template_function_fe_fn_c_showUrl_4232135645608c9833e4653_26760129')) {
+function smarty_template_function_fe_fn_c_showUrl_4232135645608c9833e4653_26760129($_smarty_tpl,$params) {
 $saved_tpl_vars = $_smarty_tpl->tpl_vars;
 $params = array_merge(array('leftUrl'=>'','leftText'=>'','rightUrl'=>'','rightText'=>'','hasArrow'=>''), $params);
 foreach ($params as $key => $value) {
@@ -858,30 +860,30 @@ if ($_smarty_tpl->tpl_vars[$key] === $value) $saved_tpl_vars[$key] = $value;
 $_smarty_tpl->tpl_vars = $saved_tpl_vars;
 }
 }
-/*/ smarty_template_function_fe_fn_c_showUrl_10590631665608adf299b8e9_29027288 */
+/*/ smarty_template_function_fe_fn_c_showUrl_4232135645608c9833e4653_26760129 */
 
 ?>
 <?php
-/* block_function_data_modifier_20361061575608adf2bc0b79_74527736  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_data_modifier_20361061575608adf2bc0b79_74527736')) {
-function block_function_data_modifier_20361061575608adf2bc0b79_74527736($_smarty_tpl, $block) {?>
+/* block_function_data_modifier_5010642245608c983561199_76650949  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_data_modifier_5010642245608c983561199_76650949')) {
+function block_function_data_modifier_5010642245608c983561199_76650949($_smarty_tpl, $block) {?>
 <?php
 }
 }
-/*/ block_function_data_modifier_20361061575608adf2bc0b79_74527736 */
+/*/ block_function_data_modifier_5010642245608c983561199_76650949 */
 ?>
 <?php
-/* block_function_card_prefix_119352235608adf2bc87d1_71285459  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_card_prefix_119352235608adf2bc87d1_71285459')) {
-function block_function_card_prefix_119352235608adf2bc87d1_71285459($_smarty_tpl, $block) {
+/* block_function_card_prefix_7630539685608c983564dd7_71081933  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_card_prefix_7630539685608c983564dd7_71081933')) {
+function block_function_card_prefix_7630539685608c983564dd7_71081933($_smarty_tpl, $block) {
 }
 }
-/*/ block_function_card_prefix_119352235608adf2bc87d1_71285459 */
+/*/ block_function_card_prefix_7630539685608c983564dd7_71081933 */
 ?>
 <?php
-/* block_function_title_5720021045608adf2bf43f9_57629267  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_title_5720021045608adf2bf43f9_57629267')) {
-function block_function_title_5720021045608adf2bf43f9_57629267($_smarty_tpl, $block) {?>
+/* block_function_title_19226229575608c98356ed69_17773602  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_title_19226229575608c98356ed69_17773602')) {
+function block_function_title_19226229575608c98356ed69_17773602($_smarty_tpl, $block) {?>
         <?php $_smarty_tpl->_Function->callTemplateFunction('fe_fn_c_box_adaptive_prefix', $_smarty_tpl, array('url'=>$_smarty_tpl->tpl_vars['tplData']->value['url'],'ltj'=>"title",'class'=>"c-blocka"), true);?>
 
         <?php $_smarty_tpl->_Function->callTemplateFunction('fe_fn_c_title', $_smarty_tpl, array(), true);?>
@@ -891,20 +893,20 @@ function block_function_title_5720021045608adf2bf43f9_57629267($_smarty_tpl, $bl
         <?php
 }
 }
-/*/ block_function_title_5720021045608adf2bf43f9_57629267 */
+/*/ block_function_title_19226229575608c98356ed69_17773602 */
 ?>
 <?php
-/* block_function_content_16138423215608adf2bff6f1_81908855  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_content_16138423215608adf2bff6f1_81908855')) {
-function block_function_content_16138423215608adf2bff6f1_81908855($_smarty_tpl, $block) {
+/* block_function_content_7394884315608c983570910_89311795  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_content_7394884315608c983570910_89311795')) {
+function block_function_content_7394884315608c983570910_89311795($_smarty_tpl, $block) {
 }
 }
-/*/ block_function_content_16138423215608adf2bff6f1_81908855 */
+/*/ block_function_content_7394884315608c983570910_89311795 */
 ?>
 <?php
-/* block_function_foot_12343367295608adf2c063a8_79697367  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_foot_12343367295608adf2c063a8_79697367')) {
-function block_function_foot_12343367295608adf2c063a8_79697367($_smarty_tpl, $block) {?>
+/* block_function_foot_20765420265608c983575e70_70242416  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_foot_20765420265608c983575e70_70242416')) {
+function block_function_foot_20765420265608c983575e70_70242416($_smarty_tpl, $block) {?>
         <div class="c-row">
 		    <?php $_smarty_tpl->_Function->callTemplateFunction('fe_fn_c_showUrl', $_smarty_tpl, array('leftUrl'=>$_smarty_tpl->tpl_vars['tplData']->value['showLeftUrl'],'leftText'=>$_smarty_tpl->tpl_vars['tplData']->value['showLeftText'],'rightUrl'=>$_smarty_tpl->tpl_vars['tplData']->value['showRightUrl'],'rightText'=>$_smarty_tpl->tpl_vars['tplData']->value['showRightText']), true);?>
 
@@ -912,24 +914,24 @@ function block_function_foot_12343367295608adf2c063a8_79697367($_smarty_tpl, $bl
         <?php
 }
 }
-/*/ block_function_foot_12343367295608adf2c063a8_79697367 */
+/*/ block_function_foot_20765420265608c983575e70_70242416 */
 ?>
 <?php
-/* block_function_card_suffix_14950674885608adf2c184b7_66999100  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_card_suffix_14950674885608adf2c184b7_66999100')) {
-function block_function_card_suffix_14950674885608adf2c184b7_66999100($_smarty_tpl, $block) {
+/* block_function_card_suffix_10336474975608c983584102_35598899  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_card_suffix_10336474975608c983584102_35598899')) {
+function block_function_card_suffix_10336474975608c983584102_35598899($_smarty_tpl, $block) {
 }
 }
-/*/ block_function_card_suffix_14950674885608adf2c184b7_66999100 */
+/*/ block_function_card_suffix_10336474975608c983584102_35598899 */
 ?>
 <?php
-/* block_function_main_container_2715611015608adf2c19852_57080733  file:search/searchaladdin/c_base/iphone.tpl */
-if (!function_exists('block_function_main_container_2715611015608adf2c19852_57080733')) {
-function block_function_main_container_2715611015608adf2c19852_57080733($_smarty_tpl, $block) {?>
+/* block_function_main_container_21280996905608c983584fa3_27097602  file:search/searchaladdin/c_base/iphone.tpl */
+if (!function_exists('block_function_main_container_21280996905608c983584fa3_27097602')) {
+function block_function_main_container_21280996905608c983584fa3_27097602($_smarty_tpl, $block) {?>
 <?php $_smarty_tpl->_Function->callTemplateFunction('alaEngine', $_smarty_tpl, array(), true);?>
 
 <?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_card_prefix_119352235608adf2bc87d1_71285459', 'name' => "card_prefix"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_card_prefix_7630539685608c983564dd7_71081933', 'name' => "card_prefix"));
 ?>
 
 <div class="result c-container<?php if ($_smarty_tpl->tpl_vars['tplData']->value['isIphoneOnly']) {?> c-container-tile <?php echo $_smarty_tpl->tpl_vars['tplData']->value['isIphoneOnly'];
@@ -937,15 +939,15 @@ $_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'functio
 " <?php $_smarty_tpl->_Function->callTemplateFunction('alaTplInfo', $_smarty_tpl, array(), true);?>
 >
 		<?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_title_5720021045608adf2bf43f9_57629267', 'name' => "title"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_title_19226229575608c98356ed69_17773602', 'name' => "title"));
 ?>
 
         <?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_content_16138423215608adf2bff6f1_81908855', 'name' => "content"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_content_7394884315608c983570910_89311795', 'name' => "content"));
 ?>
 
         <?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_foot_12343367295608adf2c063a8_79697367', 'name' => "foot"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_foot_20765420265608c983575e70_70242416', 'name' => "foot"));
 ?>
 
 
@@ -959,11 +961,11 @@ $_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'functio
 <?php }?>
 </div>
 <?php 
-$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_card_suffix_14950674885608adf2c184b7_66999100', 'name' => "card_suffix"));
+$_smarty_tpl->_Block->callBlock($_smarty_tpl, array('caching' => false, 'function' => 'block_function_card_suffix_10336474975608c983584102_35598899', 'name' => "card_suffix"));
 ?>
 
 <?php
 }
 }
-/*/ block_function_main_container_2715611015608adf2c19852_57080733 */
+/*/ block_function_main_container_21280996905608c983584fa3_27097602 */
 ?>

@@ -12,7 +12,7 @@
 {%/block%}
 
 {%block name="content"%}{%strip%}
-    <style>.wa-gcw-wrapper {
+<style>.wa-gcw-wrapper {
   overflow: hidden;
   position: relative;
 }
@@ -44,9 +44,17 @@
             <li></li>
         </ul>
     </div>
+
+<script>
+A.setup({
+	len : 5
+});
+</script>
     
 <script>
+A.init(function(){
+	console.log(this.data)
+});
 </script>
-    <script></script>
 {%/strip%}{%/block%}
 

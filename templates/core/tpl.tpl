@@ -73,11 +73,26 @@
         });
     </script>
     <!-- 使用ESL加载器并完成配置 -->
+    <!-- 模拟全局js -->
+	<script >
+		window.A = {
+			data : null,
+			setup: function(data){
+				this.data = data;
+			},
+			init : function(func){
+				var obj = {
+					data : this.data
+				};
+				func.call(obj);
+			}
+		};
+	</script>
 	</head>
 <body>
 
 <div id="page-bd">
-    <div id="results">
+	<div id="results">
 			{%include file= "search/searchaladdin/c_base/iphone.tpl" tplData = $item.data  %}
 		{%foreach $datas as $item%}
 			<div class="">
@@ -92,12 +107,13 @@
 </div>
 
 <script type="text/javascript">
-    $('img[data-imagedelaysrc]').each(function(){
+	 $('img[data-imagedelaysrc]').each(function(){
         this.src = this.getAttribute('data-imagedelaysrc');
         this.removeAttribute('data-imagedelaysrc');
     });
     
 </script>
+
 
 
 </body></html>

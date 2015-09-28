@@ -130,8 +130,13 @@
 		</div>
 	</div>
 
+	<script>
+A.setup({
+	len : {%$tplData.len%}		
+});
 	</script>
 <script data-merge>
+A.init(function () {
 	var app = (function(window,undefined,$){
 			return {
 				init:function(config){
@@ -213,7 +218,8 @@
 			}
 	})(window,undefined,$);
 
-	app.init({self:this,during:2000,len:5,scrollElements:'.wa-tujie-scrollor ul li'});
+	app.init({self:this,during:2000,len:this.data.len,scrollElements:'.wa-tujie-scrollor ul li'});
+});
 	
 </script>
 {%/strip%}{%/block%}
