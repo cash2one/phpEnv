@@ -94,7 +94,6 @@
 
 <div id="page-bd">
 	<div id="results">
-			{%include file= "search/searchaladdin/c_base/iphone.tpl" tplData = $item.data  %}
 		{%foreach $datas as $item%}
 			<div class="">
 				{%$item.describe%}

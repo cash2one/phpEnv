@@ -1,30 +1,29 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 16:23:50
+<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 19:02:10
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:13435499315608f916d5fc38_68071224%%*/
+/*%%SmartyHeaderCode:188888972856091e32a9ca65_21394919%%*/
 $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_5608f916dafe32_45787890',
+  'unifunc' => 'content_56091e32adb824_31476564',
   'file_dependency' => 
   array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1443428600,
+      1 => 1443438119,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
-    'file:search/searchaladdin/c_base/iphone.tpl' => 1,
   ),
   'isChild' => false,
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5608f916dafe32_45787890')) {
-function content_5608f916dafe32_45787890 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '13435499315608f916d5fc38_68071224';
+if ($_valid && !is_callable('content_56091e32adb824_31476564')) {
+function content_56091e32adb824_31476564 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '188888972856091e32a9ca65_21394919';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -130,9 +129,6 @@ $_smarty_tpl->compiled->nocache_hash = '13435499315608f916d5fc38_68071224';
 
 <div id="page-bd">
 	<div id="results">
-			<?php $_smarty_tpl->_Subtemplate->renderSubtemplate($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0, false, false, false);
-?>
-
 		<?php
 $_from = $_smarty_tpl->tpl_vars['datas']->value;
 if (!is_array($_from) && !is_object($_from)) {

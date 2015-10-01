@@ -9,11 +9,7 @@
     {%$tplData.title="我的标题文案"%}
     {%$tplData.len = 8 %}
 	{%$tplData.hook = array()%}
-	{%$tplData.list = array(
-		array("","",""),array("",""),array("","","")
-	)%}
-    
-    
+	{%$tplData.list = array( array("","",""),array("",""),array("","",""))%}
 {%/block%}
 
 {%block name="content"%}{%strip%}
@@ -78,25 +74,25 @@ A.setup({
 });
 </script>
     
-<script>
+<script data-merge>
 A.init(function(){
 
 var ct = $(this.container),self = this;
 
 require(['uiamd/iscroll/iscroll'], function (IScroll){
 	var gcwScroll = new IScroll('.wa-gcw-scroll-wrapper', {
-		disableMouse: true,
-		scrollX: true,
-		scrollY: false,
+		disableMouse     : true,
+		scrollX          : true,
+		scrollY          : false,
 		eventPassthrough : true,
-		scrollbars: false,
-		snap:true
+		scrollbars       : false,
+		snap             : true
 	});
 
 	gcwScroll.on('scrollEnd', function(){
 		var thisPage = this.currentPage.pageX;
 		var tabindex = self.data.hook[thisPage] + "";
-		if( tabindex != "undefined" && tabindex != ""){
+		if( tabindex != "undefined" && tabindex !== ""){
 			console.log(thisPage);
 			ct.find('.wa-gcw-tabs li').removeClass('c-tabs-nav-selected').eq(tabindex).addClass('c-tabs-nav-selected');
 		}
@@ -110,7 +106,7 @@ require(['uiamd/iscroll/iscroll'], function (IScroll){
 				gcwScroll.goToPage(key,0,800);
 			}
 		}
-	}); 
+ 	}); 
 
 	$('body').one('onlyshowMore', function () {
 		setTimeout(function() {
@@ -119,6 +115,7 @@ require(['uiamd/iscroll/iscroll'], function (IScroll){
 	});
 });
 });
+
 </script>
 {%/strip%}{%/block%}
 
