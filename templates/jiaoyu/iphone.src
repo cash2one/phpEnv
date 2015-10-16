@@ -1,0 +1,135 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+
+{%block name="data_modifier"%}
+    {%$tplData._alaFm="alwz"%}
+    {%$tplData.showLeftText = "开发平台"%}
+    {%$tplData.showRightUrl = "http://www.baidu.com/"%}
+    {%$tplData.showRightText = "查看更多相关结果"%}
+    {%$tplData.url="http://m.baidu.com"%}
+    {%$tplData.title="我的标题文案"%}
+    {%$tplData.len = 8 %}
+	{%$tplData.hook = array("","","","","")%}
+	{%$tplData.list = array( array("","",""),array("",""),array("","",""))%}
+
+
+	{%$tplData.height = '150'%}
+{%/block%}
+
+{%block name="content"%}{%strip%}
+<style>
+	#wa-jiaoyu-canvas{
+		width:100%;
+		height: {%$tplData.height|cat:"px"%};
+
+	}
+	.wa-jiaoyu-wrap{
+		position: relative;
+	}
+	.wa-jiaoyu-canvas-wrap{
+		height: {%$tplData.height|cat:"px"%};
+		margin-bottom:8px;
+	}
+	.money{
+		font-weight: bold;
+		font-size:20px;
+	}
+	.wa-jiaoyu-info{
+		text-align: center;
+		margin: 16px 0 25px 0;
+	}
+	.wa-jiaoyu-dot-red,.wa-jiaoyu-dot-blue{
+		width:12px;
+		height:12px;
+		border-radius:50%;
+		display:inline-block;
+		margin-right:5px;
+		position: relative;
+		top:1px;
+	}
+	.wa-jiaoyu-dot-red{
+		background-color:#ff6600;
+	}
+	.wa-jiaoyu-dot-blue{
+		background-color:#1f91ff;
+	}
+	.wa-jiaoyu-hy{
+		display:inline-block;
+		margin-left:5px;
+	}
+</style>
+
+	<div class="c-tabs c-gap-top wa-jiaoyu-wrapper-fixed" >
+		<div class="c-row-tile">
+			<ul class="c-tabs-nav">
+				<li class="c-tabs-nav-li WA_LOG_TAB c-tabs-nav-selected" data-tid="0">第一季
+				</li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="1">第二季
+				</li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="2">第三季
+				</li>
+			</ul>
+		</div>
+		<div class="c-tabs-content">
+			<div class="c-row wa-jiaoyu-info">
+				<div class="c-span4">
+					<p>应届平均工资</p>
+					<p class="money">￥5678</p>
+				</div>
+				<div class="c-span4 info">
+					<p>应届平均工资</p>
+					<p class="money">￥5678</p>
+				</div>
+				<div class="c-span4 info">
+					<p>应届平均工资</p>
+					<p class="money">￥5678</p>
+				</div>
+			</div>	
+			<div class="c-row c-color-gray">
+				<div class="c-span5">
+					<span>平均薪资走势图(元)</span>
+				</div>
+				<div class="c-span7">
+					<span><span class="wa-jiaoyu-dot-red"></span >该专业毕业生</span>
+					<span class="c-gap-left-small"><span class="wa-jiaoyu-dot-blue"></span>全国业毕业生</span>
+				</div>
+			</div>
+			<div class="c-row c-gap-top-large">
+				<div class="c-span12 wa-jiaoyu-canvas-wrap">
+					<canvas id="wa-jiaoyu-canvas"></canvas>
+				</div>
+			</div>
+		</div>
+		<div class="c-tabs-content" style="display: none;">
+			{%foreach $tplData.hook as $item%}
+				<div class="wa-jiaoyu-row  c-gap-top-large">
+					<div class="c-row">
+						<div class="c-span9">
+						<span> {%if $item@iteration < 10%} 0{%$item@iteration%} {%else%} {%$item@iteration%} {%/if%}</span>
+							<span class="wa-jiaoyu-hy">金融/投资<span>
+						</div>
+						<div class="c-span3" style="text-align: right;"> 32% </div>
+					</div>
+					<div class="c-gap-top-small" style="height:4px;width:100%;background-color: #81d5ff"></div>
+				</div>
+			{%/foreach%}
+
+			<div class="c-gap-top c-gap-bottom-small c-line-clamp3">
+				发动机是浪费就领导是解放军的快速减肥了看电视剧防雷接地说了句疯狂倒计时了福建代理商交付了解到了师傅家连锁店将发动机富士康
+			</div>
+		</div>
+		<div class="c-tabs-content" style="display: none;">第三季内容</div>
+		<div class="c-tabs-content" style="display: none;">第四季内容</div>
+	</div>
+
+	
+
+<script>
+A.setup({
+	len : 5,
+	hook: {%$tplData.hook|json_encode%}
+});
+</script>
+    
+
+<script data-merge>
+MYJS
+</script>
+{%/strip%}{%/block%}

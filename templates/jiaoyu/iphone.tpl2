@@ -1,0 +1,130 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+
+{%block name="data_modifier"%}
+    {%$tplData._alaFm="alwz"%}
+    {%$tplData.showLeftText = "开发平台"%}
+    {%$tplData.showRightUrl = "http://www.baidu.com/"%}
+    {%$tplData.showRightText = "查看更多相关结果"%}
+    {%$tplData.url="http://m.baidu.com"%}
+    {%$tplData.title="我的标题文案"%}
+    {%$tplData.len = 8 %}
+	{%$tplData.hook = array()%}
+	{%$tplData.list = array( array("","",""),array("",""),array("","",""))%}
+
+
+	{%$tplData.height = '150'%}
+{%/block%}
+
+{%block name="content"%}{%strip%}
+<style>
+	#wa-jiaoyu-canvas{
+		width:100%;
+
+	}
+	.wa-jiaoyu-wrap{
+		position: relative;
+	}
+	.wa-jiaoyu-canvas-wrap{
+		padding-bottom: {%100*9/16|cat:"%"%};
+		height:0;
+	}
+	.wa-jiaoyu-table{
+		width:50px;
+		padding-right:0;
+		text-align: center;
+	}
+	.wa-jiaoyu-table p{
+		margin-bottom:22px
+	}
+	.wa-jiaoyu-x span{
+		-webkit-box-flex:1;
+		-webkit-flex:1 1 auto;
+	}
+</style>
+	<div class="c-row">
+		<div class="c-span12 wa-jiaoyu-canvas-wrap">
+			<canvas id="wa-jiaoyu-canvas"></canvas>
+		</div>
+	</div>
+	
+
+<script>
+A.setup({
+	len : 5,
+	hook: {%$tplData.hook|json_encode%}
+});
+</script>
+    
+
+<script data-merge>
+A.init(function(){
+	var canvas = document.querySelector("#wa-jiaoyu-canvas");
+	ctx = canvas.getContext("2d");
+
+	var cfg = {
+		xUnit:1,
+		yUnit:5000,
+		unitHeight:44,
+		offsetAxis:{
+			x:40,
+			y:40
+		},
+
+		fontSize:14
+
+	};
+
+	(function init(){
+		canvasSetup();
+		drawLine();
+		drawTable();
+	})();
+
+	function canvasSetup(){
+		var tScale  = window.devicePixelRatio;
+		console.log(canvas.offsetWidth);	
+		
+		canvas.width = canvas.offsetWidth * tScale;
+		canvas.style.height = document.querySelector(".wa-jiaoyu-canvas-wrap").offsetHeight + "px";
+		canvas.height = document.querySelector(".wa-jiaoyu-canvas-wrap").offsetHeight * tScale;
+		cfg.unitHeight *= tScale;
+		ctx.translate(0,canvas.height);		
+
+	} 
+
+	function getRealPosition(){
+		
+		return {
+			x:1,
+			y:1
+		};
+	}
+
+	function getXY(x){
+		return 	(-1) * (x + 2);
+	}
+	function drawLine(){
+
+		for(var i=0;i<4;i++){
+			ctx.beginPath();
+			ctx.moveTo(0,getXY( i * cfg.unitHeight));
+			ctx.lineTo(canvas.width,getXY( i * cfg.unitHeight));
+			ctx.closePath();
+			ctx.stroke();
+		}
+	}
+	function drawTable(){
+		ctx.font = "14px Arial, Helvetica, sans-serif";
+		ctx.fillText("经验(年)",0,0);
+		ctx.beginPath();
+		ctx.moveTo(20,-20);
+		ctx.lineTo(50,-20);
+		ctx.closePath();
+		ctx.stroke();
+
+	}
+});
+
+</script>
+{%/strip%}{%/block%}
+

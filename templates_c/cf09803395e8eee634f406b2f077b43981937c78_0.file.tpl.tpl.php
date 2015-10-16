@@ -1,42 +1,48 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-09-28 19:02:10
+<?php /* Smarty version 3.1.28-dev/54, created on 2015-10-09 10:46:12
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:188888972856091e32a9ca65_21394919%%*/
+/*%%SmartyHeaderCode:169023245356172a7416c592_31425658%%*/
 $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_56091e32adb824_31476564',
+  'unifunc' => 'content_56172a741b0f80_29027740',
   'file_dependency' => 
   array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1443438119,
+      1 => 1444358764,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:search/searchaladdin/c_base/iphone.tpl' => 1,
   ),
   'isChild' => false,
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56091e32adb824_31476564')) {
-function content_56091e32adb824_31476564 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '188888972856091e32a9ca65_21394919';
+if ($_valid && !is_callable('content_56172a741b0f80_29027740')) {
+function content_56172a741b0f80_29027740 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '169023245356172a7416c592_31425658';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="referrer" content="always">
 
-
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <title>Grid for Wise</title>
-    <link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/iconfont.css">
+	<link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/iconfont.css">
     <link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/frame.css">
     <link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/grid.css">
+
+<!--
+	<link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/grid.css">
+-->
     <style type="text/css">
 		html,body{
 			height:100%;	
@@ -86,10 +92,10 @@ $_smarty_tpl->compiled->nocache_hash = '188888972856091e32a9ca65_21394919';
         */
     </style>
    <?php echo '<script'; ?>
- type="text/javascript" src="http://fedev.baidu.com/~yangfan16/grid/js/zepto.js"><?php echo '</script'; ?>
+ type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/zepto.js"><?php echo '</script'; ?>
 > 
    <?php echo '<script'; ?>
- type="text/javascript" src="http://fedev.baidu.com/~yangfan16/grid/js/esl.js"><?php echo '</script'; ?>
+ type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/esl.js"><?php echo '</script'; ?>
 >
     <!-- 使用ESL加载器并完成配置 -->
     <?php echo '<script'; ?>
@@ -97,12 +103,13 @@ $_smarty_tpl->compiled->nocache_hash = '188888972856091e32a9ca65_21394919';
         require.config({
             //baseUrl: 'http://m.baidu.com/static/ala/',
             paths: {
-                'uiamd': 'http://fedev.baidu.com/~yangfan16/grid/js/uiamd/'
+                'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
 　　　　　　},
             urlArgs: {
                 'uiamd/iscroll': 'v=1.0'
             }
         });
+    
     <?php echo '</script'; ?>
 >
     <!-- 使用ESL加载器并完成配置 -->
@@ -129,6 +136,9 @@ $_smarty_tpl->compiled->nocache_hash = '188888972856091e32a9ca65_21394919';
 
 <div id="page-bd">
 	<div id="results">
+		<?php $_smarty_tpl->_Subtemplate->renderSubtemplate($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0, false, false, false);
+?>
+
 		<?php
 $_from = $_smarty_tpl->tpl_vars['datas']->value;
 if (!is_array($_from) && !is_object($_from)) {

@@ -1,0 +1,17 @@
+{
+	"data":[
+		{
+			"gssurl":{
+				"gssip":"cp01-aladdin-product-14.epc.baidu.com",
+				"gssport":11111,
+				"--logid":12345678,
+				"srcids":8080,
+				"query":"康熙来了沈玉琳",
+				"--temp":"wisexmlnew"
+			},
+			"describe": "测试",
+			"filename":"data.xml"
+		}
+	]
+
+}

@@ -1,0 +1,32 @@
+/*全局*/
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    text-align: center;
+    font-size-adjust: none;
+    -webkit-text-size-adjust: none;
+}
+a {
+    color: #00c;
+    text-decoration: none;
+}
+a:visited {
+    color: #606;
+}
+em {
+    color: #bb0000;
+    text-decoration: none;
+    font-style: normal;
+}
+/*框架*/
+#page-bd {
+    color: #333;
+    background-color: #f1f1f1;
+    overflow: hidden;
+}
+#results {
+    text-align: left;
+    padding: 0 6px;
+}

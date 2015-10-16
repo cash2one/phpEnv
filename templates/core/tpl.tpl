@@ -3,13 +3,18 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="referrer" content="always">
 
-
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <title>Grid for Wise</title>
-    <link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/iconfont.css">
+	<link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/iconfont.css">
     <link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/frame.css">
     <link rel="stylesheet" href="http://fedev.baidu.com/~yangfan16/grid/less/grid.css">
+
+<!--
+	<link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/frame.css">
+    <link rel="stylesheet" href="css/grid.css">
+-->
     <style type="text/css">
 		html,body{
 			height:100%;	
@@ -58,19 +63,20 @@
         }
         */
     </style>
-   <script type="text/javascript" src="http://fedev.baidu.com/~yangfan16/grid/js/zepto.js"></script> 
-   <script type="text/javascript" src="http://fedev.baidu.com/~yangfan16/grid/js/esl.js"></script>
+   <script type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/zepto.js"></script> 
+   <script type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/esl.js"></script>
     <!-- 使用ESL加载器并完成配置 -->
     <script type="text/javascript">
         require.config({
             //baseUrl: 'http://m.baidu.com/static/ala/',
             paths: {
-                'uiamd': 'http://fedev.baidu.com/~yangfan16/grid/js/uiamd/'
+                'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
 　　　　　　},
             urlArgs: {
                 'uiamd/iscroll': 'v=1.0'
             }
         });
+    
     </script>
     <!-- 使用ESL加载器并完成配置 -->
     <!-- 模拟全局js -->
@@ -94,6 +100,7 @@
 
 <div id="page-bd">
 	<div id="results">
+		{%include file="search/searchaladdin/c_base/iphone.tpl" tplData = $item.data  %}
 		{%foreach $datas as $item%}
 			<div class="">
 				{%$item.describe%}

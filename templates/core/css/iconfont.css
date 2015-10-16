@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'sicons';
+    src: url('//m.baidu.com/static/search/iconfont/search_iconfont_128e950d.eot');
+    src: url('//m.baidu.com/static/search/iconfont/search_iconfont_128e950d.eot#iefix') format('embedded-opentype'),
+    url('//m.baidu.com/static/search/iconfont/search_iconfont_128e950d.woff') format('woff'),
+    url('//m.baidu.com/static/search/iconfont/search_iconfont_128e950d.ttf') format('truetype'),
+    url('//m.baidu.com/static/search/iconfont/search_iconfont_128e950d.svg?#iconfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'alaicons';
+    src: url('//m.baidu.com/static/search/iconfont/iconfont_58af466f.eot');
+    src: url('//m.baidu.com/static/search/iconfont/iconfont_58af466f.eot#iefix') format('embedded-opentype'),
+    url('//m.baidu.com/static/search/iconfont/iconfont_58af466f.woff') format('woff'),
+    url('//m.baidu.com/static/search/iconfont/iconfont_58af466f.ttf') format('truetype'),
+    url('//m.baidu.com/static/search/iconfont/iconfont_58af466f.svg?#iconfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'cicons';
+    src: url(//m.baidu.com/static/search/iconfont/cicon_2d5eb329.eot);
+    src: url(//m.baidu.com/static/search/iconfont/cicon_2d5eb329.eot#iefix) format('embedded-opentype'),
+         url(//m.baidu.com/static/search/iconfont/cicon_2d5eb329.woff) format('woff'),
+         url(//m.baidu.com/static/search/iconfont/cicon_2d5eb329.ttf) format('truetype'),
+         url(//m.baidu.com/static/search/iconfont/cicon_2d5eb329.svg?#cicons) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'cicons';
+    src: url('cicon.eot');
+    src: url('cicon.eot#iefix') format('embedded-opentype'),
+            url('cicon.woff') format('woff'),
+            url('cicon.ttf') format('truetype'),
+            url('cicon.svg?#cicons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="sicon-"],
+[class*=" sicon-"] {
+    font-family: "sicons" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+}
+[class^="alaicon-"],
+[class*=" alaicon-"] {
+    font-family: "alaicons" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+}
+.c-icon {
+    font-family: "cicons" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,29 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+
+{%block name="data_modifier"%}
+    {%$tplData._alaFm="alwz"%}
+    {%$tplData.showLeftText = "开发平台"%}
+    {%$tplData.showRightUrl = "http://www.baidu.com/"%}
+    {%$tplData.showRightText = "查看更多相关结果"%}
+    {%$tplData.url="http://m.baidu.com"%}
+    {%$tplData.title="我的标题文案"%}
+    {%$tplData.len = 8 %}
+	{%$tplData.hook = array()%}
+	{%$tplData.list = array( array("","",""),array("",""),array("","",""))%}
+{%/block%}
+
+{%block name="content"%}{%strip%}
+<style>
+</style>
+
+<script>
+A.setup({
+	len : 5,
+	hook: {%$tplData.hook|json_encode%}
+});
+</script>
+    
+<script data-merge>
+MYJS
+</script>
+{%/strip%}{%/block%}

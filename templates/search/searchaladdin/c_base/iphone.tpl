@@ -26,7 +26,7 @@
 {%function name="alaTplInfo"%}
 {%if $pageData.tpl == 'iphone' || $pageData.tpl == 'pad' || $pageData.tpl == 'utouch'%}
 {%if $alaData.resourceid%}srcid="{%$alaData.resourceid%}{%if $alaData.wnor_random%}{%$alaData.wnor_random%}{%else if $alaData.appid && $alaData.idrand%}_{%rand()%}{%/if%}"{%/if%}
-{%if $pageData.tpl != 'utouch'%} order="{%$alaData.iteration%}" tpl="{%$smarty.current_dir|basename%}" data-log="{'fm':'alop','ensrcid':'{%$alaData.enresourceid%}','order':'{%$alaData.iteration%}'{%if $alaData.config.waplogo%},'waplogo':1{%/if%}{%if $alaData.appid%},'laid':'{%$alaData.appid%}'{%/if%},'mu':'{%if $tplData.url%}{%$tplData.url%}{%elseif $tplData.titleurl%}{%$tplData.titleurl%}{%/if%}'}"{%if $alaData.appid%} appid="{%$alaData.appid%}"{%/if%}{%/if%}
+{%if $pageData.tpl != 'utouch'%} order="{%$alaData.iteration%}" tpl="{%$smarty.current_dir|basename%}" data-log="{'fm':'{%$_alaFm%}','ensrcid':'{%$alaData.enresourceid%}','order':'{%$alaData.iteration%}'{%if $alaData.config.waplogo%},'waplogo':1{%/if%}{%if $alaData.appid%},'laid':'{%$alaData.appid%}'{%/if%},'mu':'{%if $tplData.url%}{%$tplData.url%}{%elseif $tplData.titleurl%}{%$tplData.titleurl%}{%/if%}'}"{%if $alaData.appid%} appid="{%$alaData.appid%}"{%/if%}{%/if%}
 {%/if%}
 {%/function%}
 
@@ -106,13 +106,24 @@
 {%/function%}
 
 {%* makeurl query:nodefault/sa:default|re_index/st:default|11108i *%}
-{%function name=fe_fn_c_build_url%}{%wiseMakeSearchUrl word=$wd sa=$sa|default:"re_{%$alaData.iteration%}" st=$st|default:"11108i"%}{%/function%}
+{%function name=fe_fn_c_build_url%}{%wiseMakeSearchUrl word=$wd sa=$sa|default:"re_{%$alaData.iteration%}_{%$alaData.resourceid%}" st=$st|default:"11108i"%}{%/function%}
 
 {%* imghandle for delaysrc imgsrc:图片地址 type:default/s   ——  l/竖图；s/方图；w/宽图 *%}
-{%function name=fe_fn_c_img_delay%}
+{%function name=fe_fn_c_img_delay size=60 imgattr="data-imagedelaysrc"%}
     <div class="c-img c-img-{%$type|default:"s"%}">
-	    <img data-imagedelaysrc="{%Utils_Common::timgUrl($imgsrc, 8)%}" />
+	    <img {%$imgattr%}="{%Utils_Common::timgUrl($imgsrc, 8, $size)%}" />
 	</div>
+{%/function%}
+
+{%* 计算栅格图片宽度百分比 *%}
+{%function name=fe_fn_c_img_wrate col=3%}
+	{%(55 * $col - 24) / 636 * 100%}
+{%/function%}
+{%* 计算滑动组件父容器宽度 *%}
+{%function name=fe_fn_c_img_scroll_pwrate col=3 num=''%}
+	{%if $num%}
+		{%{%fe_fn_c_img_wrate col=$col%} * $num|cat:'%'%}
+	{%/if%}
 {%/function%}
 
 {%* text-inline highlight *%}
@@ -142,22 +153,26 @@
 {%function fe_fn_c_title %}
 	<h3 class="c-title c-gap-top-small">{%fe_fn_c_text_inline text=$tplData.title highlight='' %}</h3>
 {%/function%}
-{%function fe_fn_c_showUrl leftUrl='' leftText='' rightUrl='' rightText='' hasArrow=''%}
-    {%fe_fn_c_box_adaptive_prefix url=$leftUrl class="c-span6"%}
-	    {%if $leftText%}
-			<span class="c-color-gray">{%$leftText%}</span>
-			{%$tmpType = 'aladdin'%}
-			{%if $tplData.showUrlType%}
-				{%$tmpType = 'lightapp'%}
+{%function fe_fn_c_showUrl leftUrl='' leftText='' rightUrl='' rightText='' hasArrow='' undecode=''%}
+    <div class="c-span6">
+		{%fe_fn_c_box_adaptive_prefix url=$leftUrl undecode=$undecode class='c-line-clamp1'%}
+			{%if $leftText%}
+				<span class="c-color-gray">{%$leftText%}</span>
+				{%$tmpType = 'aladdin'%}
+				{%if $tplData.showUrlType%}
+					{%$tmpType = 'lightapp'%}
+				{%/if%}
+				<span class="c-foot-icon c-foot-icon-16 c-foot-icon-16-{%$tmpType%} c-gap-left-small"></span>
 			{%/if%}
-			<span class="c-foot-icon c-foot-icon-16 c-foot-icon-16-{%$tmpType%} c-gap-left-small"></span>
-		{%/if%}
-	{%fe_fn_c_box_adaptive_suffix url=$leftUrl%}
-	{%fe_fn_c_box_adaptive_prefix url=$rightUrl class="c-span6 c-moreinfo"%}
-	    {%if $rightText || $rightUrl%}
-			{%$rightText%}<i class="c-icon c-gap-left-small">&#xe734</i>
-		{%/if%}
-	{%fe_fn_c_box_adaptive_suffix url=$rightUrl%}
+		{%fe_fn_c_box_adaptive_suffix url=$leftUrl%}
+	</div>
+	<div class="c-span6">
+		{%fe_fn_c_box_adaptive_prefix url=$rightUrl undecode=$undecode class="c-blocka c-moreinfo"%}
+			{%if $rightText || $rightUrl%}
+				{%$rightText%}<i class="c-icon c-gap-left-small">&#xe734</i>
+			{%/if%}
+		{%fe_fn_c_box_adaptive_suffix url=$rightUrl%}
+	</div>
 {%/function%}
 
 
@@ -171,14 +186,14 @@
 {%block name="card_prefix"%}{%/block%}
 <div class="result c-container{%if $tplData.isIphoneOnly%} c-container-tile {%$tplData.isIphoneOnly%}{%/if%}" srcid="{%$alaData.resourceid%}" {%alaTplInfo%}>
 		{%block name="title"%}
-        {%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka"%}
+        {%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka" undecode=$tplData._urlUndecode%}
         {%fe_fn_c_title%}
         {%fe_fn_c_box_adaptive_suffix url=$tplData.url%}
         {%/block%}
         {%block name="content"%}{%/block%}
         {%block name="foot"%}
         <div class="c-row">
-		    {%fe_fn_c_showUrl leftUrl=$tplData.showLeftUrl leftText=$tplData.showLeftText rightUrl=$tplData.showRightUrl rightText=$tplData.showRightText%}
+		    {%fe_fn_c_showUrl leftUrl=$tplData.showLeftUrl leftText=$tplData.showLeftText rightUrl=$tplData.showRightUrl rightText=$tplData.showRightText undecode=$tplData._urlUndecode%}
 		</div>
         {%/block%}
 

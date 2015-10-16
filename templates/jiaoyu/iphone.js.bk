@@ -1,0 +1,67 @@
+A.init(function(){
+	var canvas = document.querySelector("#wa-jiaoyu-canvas");
+	ctx = canvas.getContext("2d");
+
+	var cfg = {
+		xUnit:1,
+		yUnit:5000,
+		unitHeight:44,
+		offsetAxis:{
+			x:40,
+			y:40
+		},
+
+		fontSize:14
+
+	};
+
+	(function init(){
+		canvasSetup();
+		drawLine();
+	})();
+
+	function canvasSetup(){
+		var tScale  = window.devicePixelRatio;
+		console.log(canvas.offsetWidth);	
+
+		canvas.width = canvas.offsetWidth * tScale;
+		canvas.height = canvas.offsetHeight * tScale;
+		cfg.unitHeight *= tScale;
+		ctx.translate(0,canvas.height);		
+
+	} 
+
+	function getRealPosition(){
+		
+		return {
+			x:1,
+			y:1
+		};
+	}
+
+	function getXY(x){
+		return 	(-1) * (x + 2);
+	}
+	function drawLine(){
+
+		for(var i=0;i<4;i++){
+			ctx.beginPath();
+			ctx.moveTo(0,getXY( i * cfg.unitHeight));
+			ctx.lineTo(canvas.width,getXY( i * cfg.unitHeight));
+			ctx.closePath();
+			ctx.stroke();
+		}
+	}
+	function drawTable(){
+		console.log(canvas.height);
+		ctx.translate(0,canvas.height);		
+		ctx.font = "14px Arial, Helvetica, sans-serif lighter";
+		ctx.fillText("经验(年)",0,0);
+		ctx.beginPath();
+		ctx.moveTo(20,20);
+		ctx.lineTo(50,20);
+		ctx.closePath();
+		ctx.stroke();
+
+	}
+});

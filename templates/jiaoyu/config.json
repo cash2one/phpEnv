@@ -1,0 +1,10 @@
+{
+	"data":[
+		{
+			"url":"http://opendata.baidu.com/api.php?format=xml&tn=wisetpl&resource_id=15529&query=%E4%BC%A6%E7%90%86%E5%AD%A6",
+			"describe": "测试",
+			"filename":"data.xml"
+		}
+	]
+
+}

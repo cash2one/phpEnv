@@ -1,0 +1,76 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+
+{%block name="data_modifier"%}
+    {%$tplData._alaFm="alwz"%}
+    {%$tplData.showLeftText = "开发平台"%}
+    {%$tplData.showRightUrl = "http://www.baidu.com/"%}
+    {%$tplData.showRightText = "查看更多相关结果"%}
+    {%$tplData.url="http://m.baidu.com"%}
+    {%$tplData.title="我的标题文案"%}
+    {%$tplData.len = 8 %}
+	{%$tplData.hook = array()%}
+	{%$tplData.list = array( array("","",""),array("",""),array("","",""))%}
+
+
+	{%$tplData.height = '150'%}
+{%/block%}
+
+{%block name="content"%}{%strip%}
+<style>
+	#wa-jiaoyu-canvas{
+		width:100%;
+		height: {%$tplData.height|cat:"px"%};
+
+	}
+	.wa-jiaoyu-wrap{
+		position: relative;
+	}
+	.wa-jiaoyu-canvas-wrap{
+		height: {%$tplData.height|cat:"px"%};
+	}
+	.wa-jiaoyu-table{
+		width:50px;
+		padding-right:0;
+		text-align: center;
+	}
+	.wa-jiaoyu-table p{
+		margin-bottom:22px
+	}
+	.wa-jiaoyu-x span{
+		-webkit-box-flex:1;
+		-webkit-flex:1 1 auto;
+	}
+</style>
+	<div class="c-row">
+		<div class="c-span3 wa-jiaoyu-table">
+			<p>15000</p>
+			<p>10000</p>
+			<p>5000</p>
+		</div>
+		<div class="c-span12 wa-jiaoyu-canvas-wrap">
+			<canvas id="wa-jiaoyu-canvas"></canvas>
+		</div>
+	</div>
+	
+	<div class="c-flexbox c-gap-top wa-jiaoyu-x">
+		<span>经验(年)</span>
+		<span>0</span>
+		<span>1</span>
+		<span>1</span>
+		<span>1</span>
+		<span>1</span>
+		<span>1</span>
+	</div>
+
+<script>
+A.setup({
+	len : 5,
+	hook: {%$tplData.hook|json_encode%}
+});
+</script>
+    
+
+<script data-merge>
+MYJS
+</script>
+{%/strip%}{%/block%}
