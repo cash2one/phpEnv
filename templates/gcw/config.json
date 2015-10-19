@@ -1,6 +1,10 @@
 {
 	"data":[
 		{
+			"kvurl":{
+				"query" : "key1",
+				"resource_id" :17089
+			},
 			"describe": "测试",
 			"filename":"data.xml"
 		}

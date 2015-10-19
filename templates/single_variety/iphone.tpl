@@ -1,18 +1,32 @@
 {%extends "search/searchaladdin/c_base/iphone.tpl"%}
 
 {%block name="data_modifier"%}
-	{%$tplData = $tplData.result[0]%}
-    {%$tplData.showLeftText = "开发平台"%}
-    {%$tplData.showRightUrl = "http://www.baidu.com/"%}
-    {%$tplData.showRightText = "查看更多相关结果"%}
-    {%$tplData.url="http://m.baidu.com"%}
-    {%$tplData.len = 8 %}
-	{%$tplData.hook = array()%}
-	{%$tplData.list = array( array("","",""),array("",""),array("","",""))%}
+		
+	{%if !$tplData.result[0]%}
+		$tplData.result = [ $tplData.result];
+	{%/if%}
 
-	{%$tplData.type = 2%}
-	{%$tplData.wrapWidth = "{%fe_fn_c_img_scroll_pwrate col=5 num=5%}"%}
+	{%$tplData.wrapWidth = "{%fe_fn_c_img_scroll_pwrate col=4 num=5%}"%}
 	{%$tplData.childWidth = "{%100/5|cat:"%"%}"%}
+
+	{%if !$tplData.queryparser[0]%}
+		{%$tplData.queryparser = [$tplData.queryparser]%}
+	{%/if%}
+	
+	{%if $tplData.queryparser[0].guests%}
+		{%foreach $tplData.queryparser as $item%}
+			{%$guest=$guest|cat:$item.guests%}
+		{%/foreach%}
+	
+		{%$title=$tplData.result[0].title|cat:$guest|cat:"_相关视频"%}
+	{%else%}
+		{%if $tplData.resNum ==1%}
+			{%$title=$tplData.result[0].title|cat:$tplData.result.showdate|cat:"_相关视频"%}
+		{%else%}
+				{%$title=$tplData.result[0].title|cat:"_相关视频"%}
+		{%/if%}
+	{%/if%}
+
 {%/block%}
 
 {%block name="title"%}
@@ -63,59 +77,75 @@
 	top:0;
 }
 .wa-single-variety-info{
+	font-size:13px;
 	background-color: rgba(0,0,0,0.5);
-	text-align:center;
+	text-align:right;
+}
+
+.wa-single-variety-info span{
+	display:inline-block;
+	position:relative;
+	top:1px;
+	margin-right:5px;
+}
+.wa-single-variety-info c-icon{
+	top:2px;
+	font-size:18px;
 }
 .wa-single-variety-scroll-wrapper .c-img{
 	margin: 0;	
 	border-top:0;
+	height:0;
 	border-bottom:0;
+	position:relative;
+	padding-bottom:75%;
 }
 
 </style>
 
-{%if $tplData.type ==1%}
-	{%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka"%}
-	{%fe_fn_c_title%}
-	{%fe_fn_c_box_adaptive_suffix url=$tplData.url%}
+{%if $tplData.resNum == 1%}
+	{%$tplData = $tplData.result[0]%}
+	{%if !$tplData.videoPlay[0]%}
+		{%$tplData.videoPlay = [$tplData.videoPlay] %}
+	{%/if%}
 
-	<div class="c-row">
-		<div class="c-span3">
-			{%fe_fn_c_img_delay imgsrc={%$tplData.imgurl%}%}
-		</div>
-		<div class="c-span9">
-			<p class="c-line-clamp1"><span>日期：</span><span>123</span></p>
-			<p class="c-line-clamp1"><span>主题：</span><span>123</span></p>
-			<p class="c-line-clamp1"><span>嘉宾：</span><span>123</span></p>
-			<div class="c-row c-gap-top">
-				<div class="c-span6">
-					<a href="" class="c-btn wa-single-variety-btn">
-						<span class="c-icon">&#xe732</span>
-						立即观看
-					</a>
-				</div>
-				<div class="c-span5"></div>
-			</div>
-		</div>
-	</div>
 	<div class="c-tabs c-gap-top wa-single-variety-wrap">
-                <div class="c-tabs-content" style="display: none;">百度音乐</div>
-                <div class="c-tabs-content">QQ音乐</div>
-                <div class="c-tabs-content" style="display: none;">虾米音乐</div>
-                <div class="c-tabs-content" style="display: none;">听音乐</div>
-                <div class="c-tabs-content" style="display: none;">网易云音乐</div>
-					<div class="c-row-tile c-row-bottom">
+			{%foreach $tplData.videoPlay as $item%}
+                <div class="c-tabs-content" {%if !$item@first%} style="display: none;"{%/if%} >
+					{%fe_fn_c_box_adaptive_prefix url=$item._attr.link ltj="title" class="c-blocka"%}
+						<h3 class="c-title c-gap-top-small">{%fe_fn_c_text_inline text=$title highlight='' %}</h3>
+					{%fe_fn_c_box_adaptive_suffix url=$item._attr.link%}
+
+					<div class="c-row c-gap-top-small">
+						<div class="c-span3">
+						{%fe_fn_c_box_adaptive_prefix url=$item._attr.link  class="c-blocka"%}
+							{%fe_fn_c_img_delay type="l" imgsrc={%$tplData.poster%}%}
+						{%fe_fn_c_box_adaptive_suffix url=$item._attr.link%}
+						</div>
+						<div class="c-span9">
+							<p class="c-line-clamp1"><span>日期：</span><span>{%$tplData.playdate%}</span></p>
+							<p class="c-line-clamp1"><span>{%$tplData.content1._attr.name%}：</span><span>{%implode('、',explode(' ',$tplData.content1._attr.dtl))%}</span></p>
+							<p class="c-line-clamp1"><span>{%$tplData.content2._attr.name%}：</span><span>{%implode('、',explode(' ',$tplData.content2._attr.dtl))%}</span></p>
+							<div class="c-row c-gap-top">
+								<div class="c-span6">
+									{%fe_fn_c_box_adaptive_prefix url={%$item._attr.link%} class="c-btn wa-single-variety-btn" %}
+										<span class="c-icon">&#xe732</span>
+										立即观看
+									{%fe_fn_c_box_adaptive_suffix url={%$item._attr.link%} %}
+								</div>
+								<div class="c-span8"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{%/foreach%}
+
+				<div class="c-gap-top-large c-row-tile WA_LOG_GES c-row-bottom">
                     <div class="c-tabs-nav-view">
                         <ul class="c-tabs-nav c-tabs-nav-bottom">
-                            <li class="c-tabs-nav-li WA_LOG_TAB" data-tid="0"><i class="c-tabs-nav-icon wa-tabs-card-icon-baidu c-gap-right-small"></i>百度音乐
-                            </li><li class="c-tabs-nav-li WA_LOG_TAB c-tabs-nav-selected" data-tid="1"><i class="c-tabs-nav-icon c-icon c-gap-right-small"></i>QQ音乐
-                            </li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="2"><i class="c-tabs-nav-icon c-icon c-gap-right-small"></i>虾米音乐
-                            </li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="3"><i class="c-tabs-nav-icon c-icon c-gap-right-small"></i>听音乐
-                            </li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="4"><i class="c-tabs-nav-icon c-icon c-gap-right-small"></i>网易云音乐
-                            </li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="4"><i class="c-tabs-nav-icon c-icon c-gap-right-small"></i>网易云音乐
-                            </li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="4"><i class="c-tabs-nav-icon c-icon c-gap-right-small"></i>网易云音乐
-                            </li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="4"><i class="c-tabs-nav-icon c-icon c-gap-right-small"></i>网易云音乐
-                            </li>
+							{%foreach $tplData.videoPlay as $item%}
+							<li class="c-tabs-nav-li WA_LOG_TAB {%if $item@first%} c-tabs-nav-selected {%/if%}" data-tid="1"><i class="c-tabs-nav-icon c-icon c-gap-right-small"><img style="vertical-align:middle;margin-right:5px;" src="{%Utils_Common::timgUrl($item._attr.icon, 8, 100)%}" /></i>{%$item._attr.name%}</li>
+							{%/foreach%}
                         </ul>
                     </div>
                 </div>
@@ -131,36 +161,31 @@
 	
 	</script>
 {%else%}
-	<h3 class="c-title c-gap-top-small"> {%$tplData.title%} </h3>
+<h3 class="c-title c-gap-top-small">{%$title%}</h3>
 	<div class="c-row-tile">
-		<div class="c-gap-top c-scroll-wrapper wa-single-variety-scroll-wrapper">
+		<div class="c-gap-top c-scroll-wrapper WA_LOG_GES wa-single-variety-scroll-wrapper">
 			<ul class="wa-single-variety-scrollor">
+				{%foreach $tplData.result as $item%}
 				<li>
 					<div style="position: relative">
-						{%fe_fn_c_img_delay imgsrc={%$tplData.url%} type="w"%}
+						
+						{%fe_fn_c_box_adaptive_prefix url= {%$item.url%} class="c-blocka" %}
+							<div class="c-img">
+								<img src="{%Utils_Common::timgUrl($item.content_pic, 8, $size)%}"		
+							</div>
+						{%fe_fn_c_box_adaptive_suffix url= {%$item.url%} %}
 						<div class="wa-single-variety-info-wrap">
-							<div class="wa-single-variety-info">哈哈哈</div>
-							<span class="c-icon">&#xe731</span>
+							<div class="wa-single-variety-info"><span>{%$item.playdate%}</span></div>
+							<span class="c-icon">&#xe735</span>
 						</div>
 					</div>
-					<div class="c-gap-top-small c-line-clamp2">
-						{%fe_fn_c_box_adaptive_prefix url= 'fds' class="c-blocka" %}
-							发的发的顺丰的付费方式范德萨范德萨范德萨	
-						{%fe_fn_c_box_adaptive_suffix url= 'fds' %}
+					<div style="text-align:center;" class="c-gap-top-small c-line-clamp2">
+						{%fe_fn_c_box_adaptive_prefix url= {%$item.url%} class="c-blocka" %}
+							{%implode('、',explode(' ',$item.content1._attr.dtl))%}
+						{%fe_fn_c_box_adaptive_suffix url= {%$item.url%} %}
 					</div>
 				</li>
-				<li>
-					{%fe_fn_c_img_delay imgsrc={%$tplData.url%} type="w"%}
-				</li>
-				<li>
-					{%fe_fn_c_img_delay imgsrc={%$tplData.url%} type="w"%}
-				</li>
-				<li>
-					{%fe_fn_c_img_delay imgsrc={%$tplData.url%} type="w"%}
-				</li>
-				<li>
-					{%fe_fn_c_img_delay imgsrc={%$tplData.url%} type="w"%}
-				</li>
+				{%/foreach%}
 			</ul>
 		</div>
 	</div>
@@ -188,5 +213,7 @@
 {%/if%}
     
 {%/strip%}{%/block%}
+
+
 
 

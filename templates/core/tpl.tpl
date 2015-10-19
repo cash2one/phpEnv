@@ -2,7 +2,7 @@
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="referrer" content="always">
-
+	<base href="templates/core/"/>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <title>Grid for Wise</title>
@@ -63,8 +63,10 @@
         }
         */
     </style>
-   <script type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/zepto.js"></script> 
-   <script type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/esl.js"></script>
+   <script type="text/javascript" src="js/zepto.js"></script> 
+   <script type="text/javascript" src="js/esl.js"></script>
+   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+   <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
     <!-- 使用ESL加载器并完成配置 -->
     <script type="text/javascript">
         require.config({
@@ -100,7 +102,13 @@
 
 <div id="page-bd">
 	<div id="results">
-		{%include file="search/searchaladdin/c_base/iphone.tpl" tplData = $item.data  %}
+		<div style="height:50px;position: relative;">
+			<div id="code" style="position: absolute;right:0;"></div>
+			<hr/>
+			<div class="base" style="display:none;">
+				{%include file="search/searchaladdin/c_base/iphone.tpl" tplData = $item.data  %}
+			</div>
+		</div>
 		{%foreach $datas as $item%}
 			<div class="">
 				{%$item.describe%}
@@ -118,6 +126,8 @@
         this.src = this.getAttribute('data-imagedelaysrc');
         this.removeAttribute('data-imagedelaysrc');
     });
+
+	$('#code').qrcode({width: 64,height: 64,text: "{%$url%}"});
     
 </script>
 

@@ -1,17 +1,17 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-10-09 10:46:12
+<?php /* Smarty version 3.1.28-dev/54, created on 2015-10-19 16:37:52
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:169023245356172a7416c592_31425658%%*/
+/*%%SmartyHeaderCode:3290173205624abe033bbd4_65063022%%*/
 $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_56172a741b0f80_29027740',
+  'unifunc' => 'content_5624abe0377725_74618785',
   'file_dependency' => 
   array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1444358764,
+      1 => 1445243856,
       2 => 'file',
     ),
   ),
@@ -22,15 +22,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'isChild' => false,
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56172a741b0f80_29027740')) {
-function content_56172a741b0f80_29027740 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '169023245356172a7416c592_31425658';
+if ($_valid && !is_callable('content_5624abe0377725_74618785')) {
+function content_5624abe0377725_74618785 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '3290173205624abe033bbd4_65063022';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="referrer" content="always">
-
+	<base href="templates/core/"/>
     <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <title>Grid for Wise</title>
@@ -92,10 +92,16 @@ $_smarty_tpl->compiled->nocache_hash = '169023245356172a7416c592_31425658';
         */
     </style>
    <?php echo '<script'; ?>
- type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/zepto.js"><?php echo '</script'; ?>
+ type="text/javascript" src="js/zepto.js"><?php echo '</script'; ?>
 > 
    <?php echo '<script'; ?>
- type="text/javascript" src="http://ws.baidu.com/content/wiki/grid/gridwiki/js/esl.js"><?php echo '</script'; ?>
+ type="text/javascript" src="js/esl.js"><?php echo '</script'; ?>
+>
+   <?php echo '<script'; ?>
+ src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"><?php echo '</script'; ?>
+>
+   <?php echo '<script'; ?>
+ type="text/javascript" src="js/jquery.qrcode.min.js"><?php echo '</script'; ?>
 >
     <!-- 使用ESL加载器并完成配置 -->
     <?php echo '<script'; ?>
@@ -136,9 +142,15 @@ $_smarty_tpl->compiled->nocache_hash = '169023245356172a7416c592_31425658';
 
 <div id="page-bd">
 	<div id="results">
-		<?php $_smarty_tpl->_Subtemplate->renderSubtemplate($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0, false, false, false);
+		<div style="height:50px;position: relative;">
+			<div id="code" style="position: absolute;right:0;"></div>
+			<hr/>
+			<div class="base" style="display:none;">
+				<?php $_smarty_tpl->_Subtemplate->renderSubtemplate($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0, false, false, false);
 ?>
 
+			</div>
+		</div>
 		<?php
 $_from = $_smarty_tpl->tpl_vars['datas']->value;
 if (!is_array($_from) && !is_object($_from)) {
@@ -181,6 +193,9 @@ $_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved_item;
         this.src = this.getAttribute('data-imagedelaysrc');
         this.removeAttribute('data-imagedelaysrc');
     });
+
+	$('#code').qrcode({width: 64,height: 64,text: "<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+"});
     
 <?php echo '</script'; ?>
 >

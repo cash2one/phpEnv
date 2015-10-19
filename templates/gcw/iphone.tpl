@@ -1,18 +1,15 @@
 {%extends "search/searchaladdin/c_base/iphone.tpl"%}
 
 {%block name="data_modifier"%}
-    {%$tplData._alaFm="alwz"%}
-    {%$tplData.showLeftText = "开发平台"%}
-    {%$tplData.showRightUrl = "http://www.baidu.com/"%}
-    {%$tplData.showRightText = "查看更多相关结果"%}
-    {%$tplData.url="http://m.baidu.com"%}
-    {%$tplData.title="我的标题文案"%}
-    {%$tplData.len = 8 %}
-	{%$tplData.hook = array()%}
-	{%$tplData.list = array( array("","",""),array("",""),array("","",""))%}
+	{%$tplData = $tplData.data%}
+    {%$tplData.showLeftText = {%$tplData.from%}%}
+    {%$tplData.showRightUrl = {%$tplData.site%}%}
+    {%$tplData.showRightText =  {%$tplData.moretext%}%}
 
-	{%$tplData.wrapWidth = "{%fe_fn_c_img_scroll_pwrate col=5 num=5%}"%}
-	{%$tplData.childWidth = "{%100/5|cat:"%"%}"%}
+
+	{%if !$tplData.abs[0]%}
+		{%$tplData.abs = [{%$tplData.abs%}]%}
+	{%/if%}
 {%/block%}
 
 {%block name="content"%}{%strip%}
@@ -22,16 +19,33 @@
 	position: relative;
 }
 .wa-gcw-scrollor{
-	width: {%$tplData.wrapWidth%};
 	padding:0 9px 0 15px;
 }
 .wa-gcw-scrollor li{
-	width:	{%$tplData.childWidth%};
 	vertical-align:  top;
 	position: relative;
 	display: inline-block;
 	padding-right: 6px;
 }
+
+{%* 计算每个scroll的宽度 *%}
+{%foreach $tplData.tabs as $item%}
+
+{%$item.xxxx=111%}
+
+{%if !$item.play[0]%}
+	{%$tplData.tabs[$item@index].play = [$item.play]%}
+	{%$tplData.tabs[$item@index].play_num_baidu=1%}
+	{%$item=$tplData.tabs[$item@index]%}
+{%/if%}
+
+.wa-gcw-pnth-{%$item@index%}{
+	width:	{%fe_fn_c_img_scroll_pwrate col=4 num=$item.play_num_baidu|cat:"px"%};
+}
+.wa-gcw-pnth-{%$item@index%} li{
+	width: {%100/$item.play_num_baidu|cat:"%"%}
+}
+{%/foreach%}
 
 .wa-gcw-play{
 	width:50px;
@@ -58,45 +72,35 @@
 	<div class="c-tabs c-gap-top wa-gcw-wrapper-scroll">
 		<div class="c-row-tile">
 			<ul class="c-tabs-nav">
-				<li class="c-tabs-nav-li WA_LOG_TAB c-tabs-nav-selected" data-tid="0">第一季
-				</li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="1">第二季
-				</li><li class="c-tabs-nav-li WA_LOG_TAB" data-tid="2">第三季 </li>
-				</li>
+				{%foreach $tplData.tabs as $item%}
+					<li class="c-tabs-nav-li WA_LOG_TAB {%if $item@first%} c-tabs-nav-selected {%/if%}" data-tid="0"> {%$item.title%} </li>
+				{%/foreach%}
 			</ul>
 		</div>
-		<div class="c-tabs-content">
-			<div class="c-gap-top  c-row-tile c-scroll-wrapper wa-gcw-scroll-wrapper">
-						<ul class="wa-gcw-scrollor">
-							<li>
-								<div style="position: relative">
-									{%fe_fn_c_img_delay imgsrc={%$tplData.url%} %}
-									<span class="wa-gcw-play">
-										<span class="c-icon">&#xe735</span>
-									</span>
-								</div>
-								<div class="c-gap-top-small c-line-clamp2">
-									{%fe_fn_c_box_adaptive_prefix url= 'fds' class="c-blocka" %}
-										发的发的顺丰的付费方式范德萨范德萨范德萨	
-									{%fe_fn_c_box_adaptive_suffix url= 'fds' %}
-								</div>
-							</li>
-							<li>
-								{%fe_fn_c_img_delay imgsrc={%$tplData.url%} %}
-							</li>
-							<li>
-								{%fe_fn_c_img_delay imgsrc={%$tplData.url%} %}
-							</li>
-							<li>
-								{%fe_fn_c_img_delay imgsrc={%$tplData.url%} %}
-							</li>
-							<li>
-								{%fe_fn_c_img_delay imgsrc={%$tplData.url%} %}
-							</li>
-						</ul>
-					</div>	
-		</div>
-		<div class="c-tabs-content" style="display: none;">第二季内容</div>
-		<div class="c-tabs-content" style="display: none;">第三季内容</div>
+
+		{%foreach $tplData.tabs as $item%}
+			<div class="c-tabs-content" style=" {%if !$item@first%} display: none; {%/if%}">
+				<div class="c-gap-top  c-row-tile c-scroll-wrapper wa-gcw-scroll-wrapper">
+							<ul class="wa-gcw-scrollor wa-gcw-pnth-{%$item@index%}">
+								{%foreach $item.play as $item2%}
+									<li>
+										{%fe_fn_c_box_adaptive_prefix url= {%$item2.url%} class="c-blocka" %}
+											<div style="position: relative">
+												{%fe_fn_c_img_delay imgsrc={%$item2.img%} %}
+												<span class="wa-gcw-play">
+													<span class="c-icon">&#xe735</span>
+												</span>
+											</div>
+											<div style="text-align:center;" class="c-gap-top-small c-line-clamp2">
+													{%$item2.text%}
+											</div>
+										{%fe_fn_c_box_adaptive_suffix url= {%$item2.url%} %}
+									</li>
+								{%/foreach%}
+							</ul>
+						</div>	
+			</div>
+		{%/foreach%}
 	</div>
 
 	
@@ -111,21 +115,28 @@ A.setup({
 <script data-merge>
 A.init(function(){
 
-var ct = $(this.container),self = this;
-
 require(['uiamd/iscroll/iscroll'], function (IScroll){
-	var gcwScroll = new IScroll('.wa-gcw-scroll-wrapper', {
-		disableMouse: true,
-		scrollX: true,
-		scrollY: false,
-		eventPassthrough : true,
-		scrollbars: false
+	var scrolls = document.querySelectorAll(".wa-gcw-scroll-wrapper");
+	var sols = [];
+
+	[].slice.call(scrolls).forEach(function(el,index){
+		var gcwScroll = new IScroll(el, {
+			disableMouse: true,
+			scrollX: true,
+			scrollY: false,
+			eventPassthrough : true,
+			scrollbars: false
+		});
+		
+		sols.push(gcwScroll);
 	});
 
 
 	$('body').one('onlyshowMore', function () {
 		setTimeout(function() {
-			gcwScroll.refresh();
+			[].slice.call(sols).forEach(function(el,index){
+				el.refresh();		
+			});
 		}, 0);
 	});
 });

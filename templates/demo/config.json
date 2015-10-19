@@ -1,6 +1,10 @@
 {
 	"data":[
 		{
+			"kvurl":{
+				"query" : "黑暗面",
+				"resource_id" :8079 
+			},
 			"describe": "测试",
 			"filename":"data.xml"
 		}

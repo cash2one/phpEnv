@@ -53,6 +53,49 @@
 			return $array;                                        
 		}                                                        
 
+		
+		public static function send_post($url, $post_data) {
+		  $options = array(
+			  'http' => array(
+			  'method' => 'POST',//or GET
+			  'header' => 'Content-type:application/x-www-form-urlencoded',
+			  'content' => $post_data,
+			  'timeout' => 15 * 60 // 超时时间（单位:s）
+			  )
+		  );
+		  $context = stream_context_create($options);
+		  $result = file_get_contents($url, false, $context);
+		  return $result;
+		 }
+	
+		public static function objectToArray($e){
+			$e=(array)$e;
+			foreach($e as $k=>$v){
+				if( gettype($v)=='resource' ) return;
+				if( gettype($v)=='object' || gettype($v)=='array' )
+					$e[$k]=(array)objectToArray($v);
+			}
+			return $e;
+		 }
+
+		public static function get_real_ip(){ 
+			$ip=false; 
+			if(!empty($_SERVER['HTTP_CLIENT_IP'])){ 
+				$ip=$_SERVER['HTTP_CLIENT_IP']; 
+			}
+			if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){ 
+				$ips=explode (', ', $_SERVER['HTTP_X_FORWARDED_FOR']); 
+				if($ip){ array_unshift($ips, $ip); $ip=FALSE; }
+				for ($i=0; $i < count($ips); $i++){
+					if(!eregi ('^(10│172.16│192.168).', $ips[$i])){
+						$ip=$ips[$i];
+						break;
+					}
+				}
+			}
+			return ($ip ? $ip : $_SERVER['REMOTE_ADDR']); 
+		}
+
 
     }
 
