@@ -1,11 +1,9 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-10-21 17:55:49
+<?php /* Smarty version 3.1.27, created on 2015-10-21 18:45:46
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:193271337056276125392556_23276655%%*/
+/*%%SmartyHeaderCode:93357642156276cdad6ccc6_58885223%%*/
+if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
-  'has_nocache_code' => false,
-  'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_562761253ca132_01726432',
   'file_dependency' => 
   array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
@@ -15,16 +13,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'includes' => 
+  'nocache_hash' => '93357642156276cdad6ccc6_58885223',
+  'variables' => 
   array (
-    'file:search/searchaladdin/c_base/iphone.tpl' => 1,
+    'item' => 0,
+    'datas' => 0,
+    'tplName' => 0,
+    'url' => 0,
   ),
-  'isChild' => false,
+  'has_nocache_code' => false,
+  'version' => '3.1.27',
+  'unifunc' => 'content_56276cdada33b8_08814813',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_562761253ca132_01726432')) {
-function content_562761253ca132_01726432 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '193271337056276125392556_23276655';
+if ($_valid && !is_callable('content_56276cdada33b8_08814813')) {
+function content_56276cdada33b8_08814813 ($_smarty_tpl) {
+
+$_smarty_tpl->properties['nocache_hash'] = '93357642156276cdad6ccc6_58885223';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -144,7 +149,7 @@ $_smarty_tpl->compiled->nocache_hash = '193271337056276125392556_23276655';
 			<div id="code" style="position: absolute;right:0;"></div>
 			<hr/>
 			<div class="base" style="display:none;">
-				<?php $_smarty_tpl->_Subtemplate->renderSubtemplate($_smarty_tpl, "search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0, false, false, false);
+				<?php echo $_smarty_tpl->getSubTemplate ("search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0);
 ?>
 
 			</div>
@@ -154,12 +159,11 @@ $_from = $_smarty_tpl->tpl_vars['datas']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
 }
-$__foreach_item_0_saved_item = isset($_smarty_tpl->tpl_vars['item']) ? $_smarty_tpl->tpl_vars['item'] : false;
-$_smarty_tpl->tpl_vars['item'] = new Smarty_Variable();
-$__foreach_item_0_total = $_smarty_tpl->_count($_from);
-if ($__foreach_item_0_total) {
+$_smarty_tpl->tpl_vars['item'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['item']->_loop = false;
 foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
-$__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
+$_smarty_tpl->tpl_vars['item']->_loop = true;
+$foreach_item_Sav = $_smarty_tpl->tpl_vars['item'];
 ?>
 			<div class="">
 				<?php echo $_smarty_tpl->tpl_vars['item']->value['describe'];?>
@@ -171,15 +175,12 @@ $__foreach_item_0_saved_local_item = $_smarty_tpl->tpl_vars['item'];
 			</pre>
 			<?php ob_start();
 echo ($_smarty_tpl->tpl_vars['tplName']->value).("/iphone.tpl");
-$_tmp1=ob_get_clean();?><?php $_smarty_tpl->_Subtemplate->renderSubtemplate($_smarty_tpl, $_tmp1, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0, true, true, false);
+$_tmp1=ob_get_clean();
+echo $_smarty_tpl->getSubTemplate ($_tmp1, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0);
 ?>
 
 		<?php
-$_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved_local_item;
-}
-}
-if ($__foreach_item_0_saved_item) {
-$_smarty_tpl->tpl_vars['item'] = $__foreach_item_0_saved_item;
+$_smarty_tpl->tpl_vars['item'] = $foreach_item_Sav;
 }
 ?>
     </div>
