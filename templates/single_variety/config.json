@@ -7,7 +7,7 @@
 				"--logid":12345678,
 				"srcids":8080,
 				"query":"康熙来了沈玉琳",
-				"--temp":"wisexmlnew"
+				"--temp": "baidu"
 			},
 			"describe": "多集",
 			"filename":"data.xml"
@@ -19,7 +19,7 @@
 				"--logid":12345678,
 				"srcids":8080,
 				"query":"马兰花开20150530",
-				"--temp":"wisexmlnew"
+				"--temp":"baidu"
 			},
 			"describe": "单集",
 			"filename":"data.xml"

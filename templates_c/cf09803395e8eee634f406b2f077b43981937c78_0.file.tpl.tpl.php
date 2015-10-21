@@ -1,17 +1,17 @@
-<?php /* Smarty version 3.1.28-dev/54, created on 2015-10-19 16:37:52
+<?php /* Smarty version 3.1.28-dev/54, created on 2015-10-21 17:55:49
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3290173205624abe033bbd4_65063022%%*/
+/*%%SmartyHeaderCode:193271337056276125392556_23276655%%*/
 $_valid = $_smarty_tpl->decodeProperties(array (
   'has_nocache_code' => false,
   'version' => '3.1.28-dev/54',
-  'unifunc' => 'content_5624abe0377725_74618785',
+  'unifunc' => 'content_562761253ca132_01726432',
   'file_dependency' => 
   array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1445243856,
+      1 => 1445402781,
       2 => 'file',
     ),
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'isChild' => false,
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5624abe0377725_74618785')) {
-function content_5624abe0377725_74618785 ($_smarty_tpl) {
-$_smarty_tpl->compiled->nocache_hash = '3290173205624abe033bbd4_65063022';
+if ($_valid && !is_callable('content_562761253ca132_01726432')) {
+function content_562761253ca132_01726432 ($_smarty_tpl) {
+$_smarty_tpl->compiled->nocache_hash = '193271337056276125392556_23276655';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -109,11 +109,9 @@ $_smarty_tpl->compiled->nocache_hash = '3290173205624abe033bbd4_65063022';
         require.config({
             //baseUrl: 'http://m.baidu.com/static/ala/',
             paths: {
-                'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
-　　　　　　},
-            urlArgs: {
-                'uiamd/iscroll': 'v=1.0'
-            }
+                //'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
+                'uiamd': '//m.baidu.com/static/ala/uiamd/'
+　　　　　　}
         });
     
     <?php echo '</script'; ?>

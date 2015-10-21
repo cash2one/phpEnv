@@ -72,11 +72,9 @@
         require.config({
             //baseUrl: 'http://m.baidu.com/static/ala/',
             paths: {
-                'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
-　　　　　　},
-            urlArgs: {
-                'uiamd/iscroll': 'v=1.0'
-            }
+                //'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
+                'uiamd': '//m.baidu.com/static/ala/uiamd/'
+　　　　　　}
         });
     
     </script>

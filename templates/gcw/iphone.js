@@ -1,10 +1,12 @@
 A.init(function(){
 
+
 require(['uiamd/iscroll/iscroll'], function (IScroll){
-	var scrolls = document.querySelectorAll(".wa-gcw-scroll-wrapper");
+	var scrolls = [].slice.call(document.querySelectorAll(".wa-gcw-scroll-wrapper"));
 	var sols = [];
 
-	[].slice.call(scrolls).forEach(function(el,index){
+
+	scrolls.forEach(function(el,index){
 		var gcwScroll = new IScroll(el, {
 			disableMouse: true,
 			scrollX: true,
@@ -12,17 +14,20 @@ require(['uiamd/iscroll/iscroll'], function (IScroll){
 			eventPassthrough : true,
 			scrollbars: false
 		});
-		
+
 		sols.push(gcwScroll);
 	});
 
-
 	$('body').one('onlyshowMore', function () {
 		setTimeout(function() {
-			[].slice.call(sols).forEach(function(el,index){
+			sols.forEach(function(el,index){
 				el.refresh();		
 			});
 		}, 0);
+	});
+
+	$('.c-tabs-nav-li').on("click",function(){
+		sols[$(this).index()].refresh();
 	});
 });
 
@@ -33,5 +38,6 @@ require(['uiamd/tabs/tabs'], function (Tabs){
 			toggleMore: false
 		});
 });	
+
 
 });

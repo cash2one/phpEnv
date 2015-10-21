@@ -68,16 +68,6 @@
 		  return $result;
 		 }
 	
-		public static function objectToArray($e){
-			$e=(array)$e;
-			foreach($e as $k=>$v){
-				if( gettype($v)=='resource' ) return;
-				if( gettype($v)=='object' || gettype($v)=='array' )
-					$e[$k]=(array)objectToArray($v);
-			}
-			return $e;
-		 }
-
 		public static function get_real_ip(){ 
 			$ip=false; 
 			if(!empty($_SERVER['HTTP_CLIENT_IP'])){ 
