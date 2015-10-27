@@ -49,19 +49,17 @@
             width: 100%;
             height: 100px;
         }
-        /*
-        .c-blocka:active:before{
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 99;
-            background: rgba(143, 155, 211, 0.46);
-        }
-        */
+		#code{
+			position: absolute;
+			right:0; 
+		}
+		.towweima{
+			position: relative;
+			height:50px;
+		}
+		.base{
+			display:none;
+		}
     </style>
    <script type="text/javascript" src="js/zepto.js"></script> 
    <script type="text/javascript" src="js/esl.js"></script>
@@ -74,7 +72,10 @@
             paths: {
                 //'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
                 'uiamd': '//m.baidu.com/static/ala/uiamd/'
-　　　　　　}
+　　　　　　},
+			urlArgs: {
+				'uiamd/iscroll': 'v=1.0'
+			}
         });
     
     </script>
@@ -97,26 +98,51 @@
 	</script>
 	</head>
 <body>
+<div id="page" {%if $onlyshow%} class="onlyshow" {%/if%} >
 
-<div id="page-bd">
-	<div id="results">
-		<div style="height:50px;position: relative;">
-			<div id="code" style="position: absolute;right:0;"></div>
-			<hr/>
-			<div class="base" style="display:none;">
-				{%include file="search/searchaladdin/c_base/iphone.tpl" tplData = $item.data  %}
+
+{%*唯一答案样式*%}
+{%if $onlyshow%}
+	{%include file="core/onlyshow.tpl" %}
+	<style>
+	.onlyshow .result:nth-of-type(2){
+		min-height:602px; padding-top:91px !important; padding-bottom:43px !important;
+	}
+	#code{
+		display:none;	
+	}
+	.towweima{
+		height:0;
+	}
+	</style>
+{%/if%}
+
+	<div id="page-bd">
+		<div id="results" >
+
+			{%*二维码*%}
+			<div class="towweima">
+				<div id="code"></div>
 			</div>
+
+			{%*结果*%}
+			{%foreach $datas as $item%}
+				{%if !$onlyshow%}
+					<div> {%$item.describe%} </div>
+				{%/if%}
+
+				{%*打印数据*%}
+				<pre style="display:none;"> {%$item.data|@print_r%}	</pre>
+
+				{%*载入模板*%}
+				{%if $onlyshow%}
+					{%include file= {%$tplName|cat:"/iphone.only.tpl"%} tplData = $item.data  %}
+				{%else%}
+					{%include file= {%$tplName|cat:"/iphone.tpl"%} tplData = $item.data  %}
+				{%/if%}
+			{%/foreach%}
 		</div>
-		{%foreach $datas as $item%}
-			<div class="">
-				{%$item.describe%}
-			</div>
-			<pre style="display:none;">
-				{%$item.data|@print_r%}	
-			</pre>
-			{%include file= {%$tplName|cat:"/iphone.tpl"%} tplData = $item.data  %}
-		{%/foreach%}
-    </div>
+	</div>
 </div>
 
 <script type="text/javascript">
@@ -126,6 +152,7 @@
     });
 
 	$('#code').qrcode({width: 64,height: 64,text: "{%$url%}"});
+	$('.result').first().append('<div id="onlyshow-bar" class="skin-light"><section></section><div class="bar"><div class="bar-l"><span>百度智能聚合</span></div><div class="bar-r"><span class="btn-fb"><i class="sicon-fb"></i>反馈</span><span class="slipt">|</span><span class="btn-share"><i class="sicon-share"></i>分享</span></div></div></div>');
     
 </script>
 

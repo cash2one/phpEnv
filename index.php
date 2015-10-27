@@ -81,6 +81,7 @@ preg_match('/en0:[\s\S]*?([0-9\.]*?) netmask/', $output, $arr);
 $smarty->assign("tplName",tplName);
 $smarty->assign("datas",$datas);
 $smarty->assign("tplDir",tplDir);
+$smarty->assign("onlyshow",onlyshow);
 $smarty->assign("url",'http://'. $arr[1] .':'.$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"]);
 $smarty->display("core/tpl.tpl");
 

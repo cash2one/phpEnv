@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-10-21 18:45:46
+<?php /* Smarty version 3.1.27, created on 2015-10-27 10:40:43
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:93357642156276cdad6ccc6_58885223%%*/
+/*%%SmartyHeaderCode:806328413562ee42ba6c765_57163270%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,27 +9,28 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1445402781,
+      1 => 1445913629,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '93357642156276cdad6ccc6_58885223',
+  'nocache_hash' => '806328413562ee42ba6c765_57163270',
   'variables' => 
   array (
-    'item' => 0,
+    'onlyshow' => 0,
     'datas' => 0,
+    'item' => 0,
     'tplName' => 0,
     'url' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56276cdada33b8_08814813',
+  'unifunc' => 'content_562ee42bac5864_28516711',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56276cdada33b8_08814813')) {
-function content_56276cdada33b8_08814813 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_562ee42bac5864_28516711')) {
+function content_562ee42bac5864_28516711 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '93357642156276cdad6ccc6_58885223';
+$_smarty_tpl->properties['nocache_hash'] = '806328413562ee42ba6c765_57163270';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -82,19 +83,17 @@ $_smarty_tpl->properties['nocache_hash'] = '93357642156276cdad6ccc6_58885223';
             width: 100%;
             height: 100px;
         }
-        /*
-        .c-blocka:active:before{
-            content: '';
-            display: block;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 99;
-            background: rgba(143, 155, 211, 0.46);
-        }
-        */
+		#code{
+			position: absolute;
+			right:0; 
+		}
+		.towweima{
+			position: relative;
+			height:50px;
+		}
+		.base{
+			display:none;
+		}
     </style>
    <?php echo '<script'; ?>
  type="text/javascript" src="js/zepto.js"><?php echo '</script'; ?>
@@ -116,7 +115,10 @@ $_smarty_tpl->properties['nocache_hash'] = '93357642156276cdad6ccc6_58885223';
             paths: {
                 //'uiamd': 'http://ws.baidu.com/content/wiki/grid/gridwiki/js/uiamd/'
                 'uiamd': '//m.baidu.com/static/ala/uiamd/'
-　　　　　　}
+　　　　　　},
+			urlArgs: {
+				'uiamd/iscroll': 'v=1.0'
+			}
         });
     
     <?php echo '</script'; ?>
@@ -142,19 +144,37 @@ $_smarty_tpl->properties['nocache_hash'] = '93357642156276cdad6ccc6_58885223';
 >
 	</head>
 <body>
+<div id="page" <?php if ($_smarty_tpl->tpl_vars['onlyshow']->value) {?> class="onlyshow" <?php }?> >
 
-<div id="page-bd">
-	<div id="results">
-		<div style="height:50px;position: relative;">
-			<div id="code" style="position: absolute;right:0;"></div>
-			<hr/>
-			<div class="base" style="display:none;">
-				<?php echo $_smarty_tpl->getSubTemplate ("search/searchaladdin/c_base/iphone.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0);
+
+
+<?php if ($_smarty_tpl->tpl_vars['onlyshow']->value) {?>
+	<?php echo $_smarty_tpl->getSubTemplate ("core/onlyshow.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0);
 ?>
 
+	<style>
+	.onlyshow .result:nth-of-type(2){
+		min-height:602px; padding-top:91px !important; padding-bottom:43px !important;
+	}
+	#code{
+		display:none;	
+	}
+	.towweima{
+		height:0;
+	}
+	</style>
+<?php }?>
+
+	<div id="page-bd">
+		<div id="results" >
+
+			
+			<div class="towweima">
+				<div id="code"></div>
 			</div>
-		</div>
-		<?php
+
+			
+			<?php
 $_from = $_smarty_tpl->tpl_vars['datas']->value;
 if (!is_array($_from) && !is_object($_from)) {
 settype($_from, 'array');
@@ -165,25 +185,37 @@ foreach ($_from as $_smarty_tpl->tpl_vars['item']->value) {
 $_smarty_tpl->tpl_vars['item']->_loop = true;
 $foreach_item_Sav = $_smarty_tpl->tpl_vars['item'];
 ?>
-			<div class="">
-				<?php echo $_smarty_tpl->tpl_vars['item']->value['describe'];?>
+				<?php if (!$_smarty_tpl->tpl_vars['onlyshow']->value) {?>
+					<div> <?php echo $_smarty_tpl->tpl_vars['item']->value['describe'];?>
+ </div>
+				<?php }?>
 
-			</div>
-			<pre style="display:none;">
-				<?php echo print_r($_smarty_tpl->tpl_vars['item']->value['data']);?>
-	
-			</pre>
-			<?php ob_start();
-echo ($_smarty_tpl->tpl_vars['tplName']->value).("/iphone.tpl");
+				
+				<pre style="display:none;"> <?php echo print_r($_smarty_tpl->tpl_vars['item']->value['data']);?>
+	</pre>
+
+				
+				<?php if ($_smarty_tpl->tpl_vars['onlyshow']->value) {?>
+					<?php ob_start();
+echo ($_smarty_tpl->tpl_vars['tplName']->value).("/iphone.only.tpl");
 $_tmp1=ob_get_clean();
 echo $_smarty_tpl->getSubTemplate ($_tmp1, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0);
 ?>
 
-		<?php
+				<?php } else { ?>
+					<?php ob_start();
+echo ($_smarty_tpl->tpl_vars['tplName']->value).("/iphone.tpl");
+$_tmp2=ob_get_clean();
+echo $_smarty_tpl->getSubTemplate ($_tmp2, $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('tplData'=>$_smarty_tpl->tpl_vars['item']->value['data']), 0);
+?>
+
+				<?php }?>
+			<?php
 $_smarty_tpl->tpl_vars['item'] = $foreach_item_Sav;
 }
 ?>
-    </div>
+		</div>
+	</div>
 </div>
 
 <?php echo '<script'; ?>
@@ -195,6 +227,7 @@ $_smarty_tpl->tpl_vars['item'] = $foreach_item_Sav;
 
 	$('#code').qrcode({width: 64,height: 64,text: "<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 "});
+	$('.result').first().append('<div id="onlyshow-bar" class="skin-light"><section></section><div class="bar"><div class="bar-l"><span>百度智能聚合</span></div><div class="bar-r"><span class="btn-fb"><i class="sicon-fb"></i>反馈</span><span class="slipt">|</span><span class="btn-share"><i class="sicon-share"></i>分享</span></div></div></div>');
     
 <?php echo '</script'; ?>
 >

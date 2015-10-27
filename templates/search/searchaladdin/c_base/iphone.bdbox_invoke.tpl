@@ -2,17 +2,20 @@
 {%* 模板主体框架 *%}
 {%block name="main_container"%}
 {%alaEngine%}
+<div class="result c-result{%if !$tplData.isIphoneOnly && !empty($tplData.clickrecmd)%} c-clk-recommend{%/if%}{%if $tplData.isIphoneOnly%} c-container c-container-tile {%$tplData.isIphoneOnly%}{%/if%}" srcid="{%$alaData.resourceid%}" {%alaTplInfo%}>
 {%block name="card_prefix"%}{%/block%}
-<div class="result c-container{%if $tplData.isIphoneOnly%} c-container-tile {%$tplData.isIphoneOnly%}{%/if%}" srcid="{%$alaData.resourceid%}" {%alaTplInfo%}>
+{%if !$tplData.isIphoneOnly%}
+<div class="c-container">
+{%/if%}
 		{%block name="title"%}
-        {%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka"%}
+        {%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka" undecode=$tplData._urlUndecode%}
         {%fe_fn_c_title%}
         {%fe_fn_c_box_adaptive_suffix url=$tplData.url%}
         {%/block%}
         {%block name="content"%}{%/block%}
         {%block name="foot"%}
         <div class="c-row">
-		    {%fe_fn_c_showUrl leftUrl=$tplData.showLeftUrl leftText=$tplData.showLeftText rightUrl=$tplData.showRightUrl rightText=$tplData.showRightText%}
+		    {%fe_fn_c_showUrl leftUrl=$tplData.showLeftUrl leftText=$tplData.showLeftText rightUrl=$tplData.showRightUrl rightText=$tplData.showRightText undecode=$tplData._urlUndecode%}
 		</div>
         {%/block%}
 
@@ -41,12 +44,25 @@
 				xsearchMgr_v2();
 				xsearchBdbox_v2(_this);
 			});
-		});
+		},true);
 	</script>
 </div>
 {%/if%}
 {%/if%}
 {%/block%}
+{%if !$tplData.isIphoneOnly%}
 </div>
+{%/if%}
 {%block name="card_suffix"%}{%/block%}
+    {%*点击推荐*%}
+    {%if !empty($tplData.clickrecmd) %}
+        <div class="c-container c-recomm-wrap" style="display: none;">
+            <div class="c-recomm-cnt c-gray"><span class="c-gap-right"><i class="c-icon">&#xe780</i>为您推荐：</span>   
+            {%foreach $tplData.clickrecmd as $recmd%}
+                <a class="c-gap-right" href="{%wiseMakeSearchUrl word=$recmd sa='cr'%}">{%$recmd|escape:html%}</a>
+            {%/foreach%}
+            </div>
+        </div>
+    {%/if%}
+</div>
 {%/block%}

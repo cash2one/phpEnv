@@ -1,0 +1,8 @@
+#!/usr/local/bin/node
+var cp = require("child_process");
+var colors = require("colors");
+var res = cp.exec("pwd");
+
+res.stdout.on("data",function(data){
+	console.log(data.green);
+});

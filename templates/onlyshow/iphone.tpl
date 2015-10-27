@@ -3,7 +3,6 @@
 {%block name="data_modifier"%}
     {%$tplData.showLeftText = {%$tplData.from%}%}
     {%$tplData.showRightUrl = {%$tplData.site%}%}
-
 	{%if !$tplData.abs[0]%}
 		{%$tplData.abs = [{%$tplData.abs%}]%}
 	{%/if%}
@@ -11,14 +10,14 @@
 
 {%block name="content"%}{%strip%}
 <style>
-.wa-gcw-scroll-wrapper{
+.wa-shortvideo-scroll-wrapper{
 	overflow: hidden;
 	position: relative;
 }
-.wa-gcw-scrollor{
+.wa-shortvideo-scrollor{
 	padding:0 9px 0 15px;
 }
-.wa-gcw-scrollor li{
+.wa-shortvideo-scrollor li{
 	vertical-align:  top;
 	position: relative;
 	display: inline-block;
@@ -34,29 +33,29 @@
 		{%$item=$tplData.tabs[$item@index]%}
 	{%/if%}
 
-	.wa-gcw-pnth-{%$item@index%}{
+	.wa-shortvideo-pnth-{%$item@index%}{
 		width:	{%fe_fn_c_img_scroll_pwrate col=4 num=$item.play_num_baidu|cat:"px"%};
 	}
-	.wa-gcw-pnth-{%$item@index%} li{
+	.wa-shortvideo-pnth-{%$item@index%} li{
 		width: {%100/$item.play_num_baidu|cat:"%"%}
 	}
 {%/foreach%}
 
-.wa-gcw-43{
+.wa-shortvideo-43{
 	padding-bottom:75%;
 	height:0;
 }
-.wa-gcw-info{
+.wa-shortvideo-info{
 	display: inline-block;
 	margin-right:5px;
 }
 
-.wa-gcw-play{
+.wa-shortvideo-play{
 	position: absolute;
-	top:1px;
+	top:0px;
 	left:5px;
 }
-.wa-gcw-mark{
+.wa-shortvideo-mark{
 	background-color:rgba(0,0,0,0.6);
 	width:100%;
 	text-align: right;
@@ -65,9 +64,12 @@
 	left:0;
 	bottom:0;
 }
+.wa-shortvideo-wrapper-scroll .c-tabs-nav .c-tabs-nav-selected{
+	border-bottom:1px solid #38f;
+}
 </style>
 	
-	<div class="c-tabs c-gap-bottom-small c-gap-top wa-gcw-wrapper-scroll">
+	<div class="c-tabs  c-gap-top wa-shortvideo-wrapper-scroll">
 		<div class="c-row-tile">
 			<div class="c-tabs-nav-view">
 				<ul class="c-tabs-nav">
@@ -80,18 +82,18 @@
 
 		{%foreach $tplData.tabs as $item%}
 			<div class="c-tabs-content"  style=" {%if !$item@first%}  display: none; {%/if%}">
-				<div class="c-gap-top  c-row-tile c-scroll-wrapper wa-gcw-scroll-wrapper ">
-							<ul class="wa-gcw-scrollor wa-gcw-pnth-{%$item@index%}">
+				<div class="c-gap-top  c-row-tile c-scroll-wrapper wa-shortvideo-scroll-wrapper ">
+							<ul class="wa-shortvideo-scrollor wa-shortvideo-pnth-{%$item@index%}">
 								{%foreach $item.play as $item2%}
 									<li>
 										{%fe_fn_c_box_adaptive_prefix url= {%$item2.url%} class="c-blocka" %}
 											<div style="position: relative">
-												<div class="c-img wa-gcw-43">
+												<div class="c-img wa-shortvideo-43">
 													<img src="{%Utils_Common::timgUrl({%$item2.img%},8,60)%}">
 												</div>
-												<div class="wa-gcw-mark">
-													<span class="c-icon wa-gcw-play">&#xe735</span>
-													<span class="wa-gcw-info"> dfsd </span>
+												<div class="wa-shortvideo-mark">
+													<span class="c-icon wa-shortvideo-play">&#xe735</span>
+													<span class="wa-shortvideo-info"> {%$item2.time%} </span>
 	
 												</div>
 											</div>
@@ -106,27 +108,28 @@
 			</div>
 		{%/foreach%}
 	</div>
-
-	
-
-<script>
-A.setup({
-	len : 5,
-	hook: {%$tplData.hook|json_encode%}
-});
-</script>
     
 <script data-merge>
 A.init(function(){
 
+var $ct = $(this.container);
+
+require(['uiamd/tabs/tabs'], function (Tabs){
+		var scrollTabs = new Tabs($ct.find('.wa-shortvideo-wrapper-scroll'), {
+			allowScroll: true,
+			toggleMore: false,
+			onChange:function(){
+				sols[this.current].refresh();
+			}
+		});
+});	
+var sols = [];
 
 require(['uiamd/iscroll/iscroll'], function (IScroll){
-	var scrolls = [].slice.call(document.querySelectorAll(".wa-gcw-scroll-wrapper"));
-	var sols = [];
-
+	var scrolls = [].slice.call(document.querySelectorAll(".wa-shortvideo-scroll-wrapper"));
 
 	scrolls.forEach(function(el,index){
-		var gcwScroll = new IScroll(el, {
+		var shortvideoScroll = new IScroll(el, {
 			disableMouse: true,
 			scrollX: true,
 			scrollY: false,
@@ -134,7 +137,7 @@ require(['uiamd/iscroll/iscroll'], function (IScroll){
 			scrollbars: false
 		});
 
-		sols.push(gcwScroll);
+		sols.push(shortvideoScroll);
 	});
 
 	$('body').one('onlyshowMore', function () {
@@ -145,18 +148,9 @@ require(['uiamd/iscroll/iscroll'], function (IScroll){
 		}, 0);
 	});
 
-	$('.c-tabs-nav-li').on("click",function(){
-		sols[$(this).index()].refresh();
-	});
 });
 
 
-require(['uiamd/tabs/tabs'], function (Tabs){
-		var scrollTabs = new Tabs($('.wa-gcw-wrapper-scroll'), {
-			allowScroll: true,
-			toggleMore: false
-		});
-});	
 
 
 });

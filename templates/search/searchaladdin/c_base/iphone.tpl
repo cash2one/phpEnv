@@ -106,7 +106,7 @@
 {%/function%}
 
 {%* makeurl query:nodefault/sa:default|re_index/st:default|11108i *%}
-{%function name=fe_fn_c_build_url%}{%wiseMakeSearchUrl word=$wd sa=$sa|default:"re_{%$alaData.iteration%}_{%$alaData.resourceid%}" st=$st|default:"11108i"%}{%/function%}
+{%function name=fe_fn_c_build_url%}{%wiseMakeSearchUrl word=$wd sa=$sa|default:"re_{%$alaData.iteration%}_{%$alaData.resourceid%}" st=$st|default:"11108i" prese=$prese euri=$euri%}{%/function%}
 
 {%* imghandle for delaysrc imgsrc:图片地址 type:default/s   ——  l/竖图；s/方图；w/宽图 *%}
 {%function name=fe_fn_c_img_delay size=60 imgattr="data-imagedelaysrc"%}
@@ -183,8 +183,11 @@
 {%* 模板主体框架 *%}
 {%block name="main_container"%}
 {%alaEngine%}
+<div class="result c-result{%if !$tplData.isIphoneOnly && !empty($tplData.clickrecmd)%} c-clk-recommend{%/if%}{%if $tplData.isIphoneOnly%} c-container c-container-tile {%$tplData.isIphoneOnly%}{%/if%}" srcid="{%$alaData.resourceid%}" {%alaTplInfo%}>
 {%block name="card_prefix"%}{%/block%}
-<div class="result c-container{%if $tplData.isIphoneOnly%} c-container-tile {%$tplData.isIphoneOnly%}{%/if%}" srcid="{%$alaData.resourceid%}" {%alaTplInfo%}>
+{%if !$tplData.isIphoneOnly%}
+<div class="c-container">
+{%/if%}
 		{%block name="title"%}
         {%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka" undecode=$tplData._urlUndecode%}
         {%fe_fn_c_title%}
@@ -203,8 +206,21 @@
 {%if $tplData.hints%}
 {%fe_fn_c_recommend hints=$tplData.hints%}
 {%/if%}
+{%if !$tplData.isIphoneOnly%}
 </div>
+{%/if%}
 {%block name="card_suffix"%}{%/block%}
+    {%*点击推荐*%}
+    {%if !empty($tplData.clickrecmd) %}
+        <div class="c-container c-recomm-wrap" style="display: none;">
+            <div class="c-recomm-cnt c-gray"><span class="c-gap-right"><i class="c-icon">&#xe780</i>为您推荐：</span>   
+            {%foreach $tplData.clickrecmd as $recmd%}
+                <a class="c-gap-right" href="{%wiseMakeSearchUrl word=$recmd sa='cr'%}">{%$recmd|escape:html%}</a>
+            {%/foreach%}
+            </div>
+        </div>
+    {%/if%}
+</div>
 {%/block%}
 
 

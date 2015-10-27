@@ -2,6 +2,8 @@
 
 {%block name="data_modifier"%}
     {%$tplData.showLeftText = "开发平台"%}
+
+fdsf
     {%$tplData.showRightUrl = "http://www.baidu.com/"%}
     {%$tplData.showRightText = "查看更多相关结果"%}
     {%$tplData.url="http://m.baidu.com"%}
@@ -12,11 +14,10 @@
 <style>
 </style>
 
-content
+contentfs
 
 <script data-merge>
 A.init(function(){
-	alert('afds');
 	
 });
 

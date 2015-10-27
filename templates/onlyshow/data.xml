@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DOCUMENT>
+<!-- DOCUMENT，需要大写，标记整个文档的开始和结束，最少出现1次 最多出现1次 -->
+	<item>
+	<!-- item，标记每条信息的开始和结束，最少出现1次 不限制最多出现次数 -->
+		<key>Key1</key>
+		<!-- key，key关键词，目前一个key标签中只支持输入一个关键词，不支持罗列关键词。当用户在百度检索此关键词时，即可检索到，最少出现1次 最多出现1次，类型为字符串，最小长度1个字符	最大长度76个字符 -->
+		<display>
+		<!-- display，display表示盖关键词要显示的搜索结果信息，包含以下的url、title等标签。display标签中的文本长度上限为2，最少出现1次 最多出现1次 -->
+			<title>宝马X5基本信息</title>
+			<!-- title: 标题，，最少出现1次 最多出现1次，类型为字符串 -->
+			<url>http://baidu.com/</url>
+			<!-- url，资源的链接地址，最少出现1次 最多出现1次，类型为URL地址，最小长度1个字符	最大长度256个字符	必须符合正则表达式(http://)(.+) -->
+			<icon link="http://www.m.yichengwang.com" imgurl="http://www.m.yichengwang.com/img/aaa.png">在属性里</icon>
+			<!-- icon: 图片，，最少出现1次 最多出现1次，类型为字符串 -->
+			<!-- 属性link，，必选，类型为URL地址 -->
+			<!-- 属性imgurl，，必选，类型为URL地址 -->
+			<info price="12万-23万" advicePrice="20万-49万" level="SUV" oilConsumption="11.4升-23升">属性里</info>
+			<!-- info: 基本信息，，最少出现1次 最多出现1次，类型为字符串 -->
+			<!-- 属性price，，必选，类型为字符串 -->
+			<!-- 属性advicePrice，，必选，类型为字符串 -->
+			<!-- 属性level，，必选，类型为字符串 -->
+			<!-- 属性oilConsumption，，必选，类型为字符串 -->
+			<typeInfo name="14款雪佛兰 运动型" price="90万" link="http://www.m.yichengwang.com">属性里</typeInfo>
+			<!-- typeInfo: 车型信息，，最少出现0次 最多出现2次，类型为字符串 -->
+			<!-- 属性name，，必选，类型为字符串 -->
+			<!-- 属性price，，必选，类型为字符串 -->
+			<!-- 属性link，，必选，类型为URL地址 -->
+			<siteName>易车网</siteName>
+			<!-- siteName: 广告主名，，最少出现1次 最多出现1次，类型为字符串 -->
+			<moreInfoLink>http://www.m.yichengwang.com</moreInfoLink>
+			<!-- moreInfoLink: 更多信息，，最少出现1次 最多出现1次，类型为URL地址 -->
+			<linkItems>http://m.yichewang.com</linkItems>
+			<!-- linkItems: 链接数组，按顺序论坛跳转连接地址，实拍跳转连接大图地址，4s店跳转连接地址，最少出现3次 最多出现3次，类型为URL地址 -->
+			<linkItems>http://m.yichewang.com</linkItems>
+			<!-- linkItems: 链接数组，按顺序论坛跳转连接地址，实拍跳转连接大图地址，4s店跳转连接地址，最少出现3次 最多出现3次，类型为URL地址 -->
+			<linkItems>http://m.yichewang.com</linkItems>
+			<!-- linkItems: 链接数组，按顺序论坛跳转连接地址，实拍跳转连接大图地址，4s店跳转连接地址，最少出现3次 最多出现3次，类型为URL地址 -->
+		</display>
+	</item>
+</DOCUMENT>
+

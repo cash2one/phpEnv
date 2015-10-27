@@ -46,7 +46,7 @@
 		public static function xml_to_array($xmlpath){                                                        
 			$xml = file_get_contents($xmlpath,true);                         
 			$xml = preg_replace('/<!--.*-->/','',$xml);
-			$array = (array)(simplexml_load_string($xml,'SimpleXMLElement', LIBXML_NOCDATA));         
+			$array = json_decode(json_encode((simplexml_load_string($xml,'SimpleXMLElement', LIBXML_NOCDATA))),true);         
 			foreach ($array as $key=>$item){                       
 				$array[$key]  =  struct_to_array((array)$item);      
 			}                                                      
