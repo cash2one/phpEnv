@@ -1,0 +1,52 @@
+#!/bin/sh
+dir=`pwd`
+tplname=${dir##*\/}
+
+fe_php_parentpath=~/aladdin-wise/src/library/search/searchaladdin
+fe_tpl_parentpath=~/aladdin-wise/src/searchaladdin
+
+work_php_parentpath=odp/app/search/library/search/searchaladdin
+work_tpl_parentpath=odp/template/search/searchaladdin
+
+if [ $1 == 'ci' ];then
+	temp=${dir%\/*}
+	echo temp;
+	if [[ $temp =~ \w*/templates$ ]];then
+		echo $dir
+		echo $tplname;
+		echo "add to svn"
+		#目录不存在,则新建目录
+		if [ ! -d ${fe_tpl_parentpath}/${tplname} ];then
+			mkdir ${fe_tpl_parentpath}/${tplname}
+		fi
+			
+		cp  iphone.tpl ${fe_tpl_parentpath}/${tplname}/
+		cp  pad.tpl ${fe_tpl_parentpath}/${tplname}/
+		tplname=${tplname//_/''}
+		cp ${tplname}SrcPreProcessor.php $fe_php_parentpath/
+	else
+		echo "error 不在模板目录"
+	fi
+	
+elif [ $1 == 'init' ];then
+	if [[ $dir =~ \w*/templates$ ]];then
+		cp -r core/default_project $2		
+		mv ${2}/demoSrcPreProcessor.php ${2}/${2}SrcPreProcessor.php
+		sed -i '' s/demo/${2}/g ${2}/${2}SrcPreProcessor.php #mac 下 -i 参数不同,需要制定备份文件后缀名,这里传入空字符串
+		sed -i '' s/demo/${2}/g ${2}/pad.tpl #mac 下 -i 参数不同,需要制定备份文件后缀名,这里传入空字符串
+	else
+		echo "error 不在模板根目录"	
+	fi
+
+elif [ $1 == 'rm' ];then
+	rm -r ${fe_tpl_parentpath}/${2}
+	rm ${fe_php_parentpath}/${2}SrcPreProcessor.php 
+	echo remove form svn ;
+fi
+
+
+
+
+
+
+
