@@ -1,0 +1,28 @@
+#!/bin/sh
+dir=`pwd`
+tplname=${dir##*\/}
+
+echo $dir
+echo $tplname;
+
+fe_php_parentpath=~/aladdin-wise/src/library/search/searchaladdin
+fe_tpl_parentpath=~/aladdin-wise/src/searchaladdin
+
+work_php_parentpath=odp/app/search/library/search/searchaladdin
+work_tpl_parentpath=odp/template/search/searchaladdin
+
+echo "to svn"
+
+#目录不存在,则新建目录
+if [ ! -d ${fe_tpl_parentpath}/${tplname} ];then
+	mkdir ${fe_tpl_parentpath}/${tplname}
+fi
+	
+cp  iphone.tpl ${fe_tpl_parentpath}/${tplname}/
+cp  pad.tpl ${fe_tpl_parentpath}/${tplname}/
+tplname=${tplname//_/''}
+cp ${tplname}SrcPreProcessor.php $fe_php_parentpath/
+
+
+
+

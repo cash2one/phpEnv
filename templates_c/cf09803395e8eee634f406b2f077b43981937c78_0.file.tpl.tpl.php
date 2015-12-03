@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-10-27 10:40:43
+<?php /* Smarty version 3.1.27, created on 2015-10-28 10:42:38
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:806328413562ee42ba6c765_57163270%%*/
+/*%%SmartyHeaderCode:14230750665630361e3c68a0_75800485%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,14 +9,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1445913629,
+      1 => 1446000154,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '806328413562ee42ba6c765_57163270',
+  'nocache_hash' => '14230750665630361e3c68a0_75800485',
   'variables' => 
   array (
     'onlyshow' => 0,
+    'skin_light' => 0,
     'datas' => 0,
     'item' => 0,
     'tplName' => 0,
@@ -24,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_562ee42bac5864_28516711',
+  'unifunc' => 'content_5630361e446b37_89625293',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_562ee42bac5864_28516711')) {
-function content_562ee42bac5864_28516711 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_5630361e446b37_89625293')) {
+function content_5630361e446b37_89625293 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '806328413562ee42ba6c765_57163270';
+$_smarty_tpl->properties['nocache_hash'] = '14230750665630361e3c68a0_75800485';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -146,6 +147,7 @@ $_smarty_tpl->properties['nocache_hash'] = '806328413562ee42ba6c765_57163270';
 <body>
 <div id="page" <?php if ($_smarty_tpl->tpl_vars['onlyshow']->value) {?> class="onlyshow" <?php }?> >
 
+<?php $_smarty_tpl->tpl_vars['skin_light'] = new Smarty_Variable(1, null, 0);?>
 
 
 <?php if ($_smarty_tpl->tpl_vars['onlyshow']->value) {?>
@@ -162,6 +164,17 @@ $_smarty_tpl->properties['nocache_hash'] = '806328413562ee42ba6c765_57163270';
 	.towweima{
 		height:0;
 	}
+
+	<?php if ($_smarty_tpl->tpl_vars['skin_light']->value) {?>
+		#page-hd .cur{
+			color:#fff;
+			background:rgba(255,255,255,.1);
+			border-top:2px solid rgba(255,255,255,.4);
+		}
+		#page-hd .logo{
+			background-image:url(//m.baidu.com/static/search/resultlogo_white.png)!important;
+		}
+	<?php }?>
 	</style>
 <?php }?>
 
@@ -227,7 +240,11 @@ $_smarty_tpl->tpl_vars['item'] = $foreach_item_Sav;
 
 	$('#code').qrcode({width: 64,height: 64,text: "<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 "});
-	$('.result').first().append('<div id="onlyshow-bar" class="skin-light"><section></section><div class="bar"><div class="bar-l"><span>百度智能聚合</span></div><div class="bar-r"><span class="btn-fb"><i class="sicon-fb"></i>反馈</span><span class="slipt">|</span><span class="btn-share"><i class="sicon-share"></i>分享</span></div></div></div>');
+	
+	//唯一答案底部
+	<?php if ($_smarty_tpl->tpl_vars['onlyshow']->value) {?>
+		$('.result').first().append('<div id="onlyshow-bar" class="skin-light"><section></section><div class="bar"><div class="bar-l"><span>百度智能聚合</span></div><div class="bar-r"><span class="btn-fb"><i class="sicon-fb"></i>反馈</span><span class="slipt">|</span><span class="btn-share"><i class="sicon-share"></i>分享</span></div></div></div>');
+	<?php }?>
     
 <?php echo '</script'; ?>
 >

@@ -1,0 +1,158 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+
+{%block name="data_modifier"%}
+    {%$tplData.showLeftText = "开发平台"%}
+    {%$tplData.showRightUrl = "http://www.baidu.com/"%}
+    {%$tplData.showRightText = "查看更多相关结果"%}
+    {%$tplData.url="http://m.baidu.com"%}
+    {%$tplData.title="Hellow World"%}
+{%/block%}
+
+{%block name="title"%}
+{%/block%}
+
+{%block name="foot"%}
+{%/block%}
+
+{%block name="content"%}{%strip%}
+<style>
+
+.wa-longvideo-scrollor{
+	overflow-x:hidden;
+	position: relative;
+}
+
+.wa-longvideo-scrollor ul{
+	width:200%;
+}
+
+.wa-longvideo-scrollor li{
+	display: inline-block;
+	width:50%;
+	vertical-align:top;
+}
+
+.wa-longvideo-scrollor li:nth-of-type(1){ 
+}
+.wa-longvideo-scrollor li:nth-of-type(2){ 
+}
+
+</style>
+
+<div class="wa-longvideo-scrollor">
+	<ul>
+		<li>
+			{%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka"%}
+			{%fe_fn_c_title%}
+			{%fe_fn_c_box_adaptive_suffix url=$tplData.url%}
+
+			<div class="c-row">
+				<div class="c-span4">
+					{%fe_fn_c_img_delay type="l" imgsrc={%$tplData.url%}%}
+				</div>
+				<div class="c-span8">
+					<div class="">优酷全集 </div>	
+					<div class=""><span class=".c-text-box .c-text-box-blue">已完结</span>54集全</div>	
+					<div class="">年代:2015  <span>地区:美国</span></div>
+					<div class="">类型:美国/fds></div>
+					<div class="">主演:</div>
+					<div class="c-row">
+						<div class="c-span6"><a href="" class="c-btn">fds</a> </div>
+						<div class="c-span6"><a href="" class="c-btn">fds</a> </div>
+					</div>
+				</div>
+			</div>
+
+			<div class="c-row">
+				<div class="c-dropdown c-span12 wa-wz-tvseries-tab-nav-select-container">
+					<select class="wa-wz-tvseries-tab-nav-selector">
+						{%$me=floor(($tplData.episodeData.episode-1)/10)%}
+						{%$n=floor(($tplData.episodeData.currentEpisode-1)/10)%}
+						{%for $i=0 to $me%}
+							{%$e=$i*10+1%}
+							{%$t=$e+9%}
+							{%if $t>$tplData.episodeData.episode%}{%$t=$tplData.episodeData.episode%}{%/if%}
+							<option value="{%$i%}" {%if $i==$n%} selected=1 {%/if%}>
+								{%if $e==$tplData.episodeData.episode%}
+									{%$text="第{%$e%}集"%}
+								{%else%}
+									{%$text="第{%$e%}-{%$t%}集"%}
+								{%/if%}
+								{%$text%}
+								{%if $i==$n%}
+								{%$currentText=$text%}
+								{%/if%}
+							</option>
+						{%/for%}
+					</select>
+				</div>
+
+
+			</div>
+
+			<div class="c-row ">
+				 {%fe_fn_c_showUrl leftUrl=$tplData.showLeftUrl leftText=$tplData.showLeftText rightUrl=$tplData.showRightUrl rightText=$tplData.showRightText%}
+			</div>
+		</li>	
+		<li class="wa-longvideo-list"></li>
+	</ul>
+</div>
+
+
+<script class="tpl" type="text/html">
+
+<h3 class="c-title c-gap-top-small">琅琊榜视频推荐</h3>
+
+<%
+var len = data.list.length > 5 ? 5 : data.list.length;
+for(var i=0;i < len ; i++){ 
+	var item = data.list[i];
+%>
+
+	<div <% if( i != len - 1 ){ %> class="c-line-bottom" <% } %> >
+		<% if(i < 2 ){ %>
+			<div class="c-row c-gap-top c-gap-bottom">
+				<div class="c-span3">
+					<div class="c-img c-img-w">
+						<img src="<%=item.imgurl %>">
+					</div>
+				</div>
+				<div class="c-span9">
+					<div class="c-flexbox "> 
+						<div class="c-line-clamp1 c-color-link"><%=item.title%></div> <i class="c-text-box c-text-box-red">新</i>
+					</div>
+					<div class="c-color-gray  c-line-clamp1">
+						来自 :<%=item.from%>
+					</div>
+					<div class="c-color-gray  c-line-clamp1">
+						作者 :<%=item.author%>
+					</div>
+					<div class="c-color-gray">
+						<span><%=item.num%></span>	
+					</div>
+				</div>
+			</div>
+		<% }else { %>
+			<div class="c-flexbox c-gap-top c-gap-bottom">
+				<div class="c-color-link"> <%=item.title%> </div> <div class="c-color-gray"> <%=item.num%> </div>
+			</div>
+		<% } %>
+
+	</div>
+
+<% } %>
+</script>
+
+
+
+
+<script>
+A.setup({
+	pref:'{%$fe_var_tc_jump%}'
+});
+</script>
+
+<script data-merge>
+MYJS
+</script>
+{%/strip%}{%/block%}

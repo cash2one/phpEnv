@@ -1,0 +1,175 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+
+{%block name="data_modifier"%}
+	{%if $tplData && !$tplData.result[0]%}
+		{%$tplData.result  = [$tplData.result[0]]%}
+	{%/if%}
+
+    {%$tplData.showLeftText = $tplData.result[0].from%}
+    {%$tplData.showRightUrl = $tplData.result[0].site%}
+    {%$tplData.url = $tplData.result[0].site%}
+    {%$tplData.title= $tplData.result[0].title%}
+
+	{%*显示小于等于9条信息*%}
+	
+	{%if $tplData.resNum > 9%}
+		{%$size = 9%}
+		{%$res = array_slice($tplData.result,0,$size)%}
+	{%else%}
+		{%$size = $tplData.resNum%}
+		{%$res = $tplData.result%}
+	{%/if%}
+
+	{%$page = ceil($size / 3) %}
+
+
+	{%*精确定位筛选信息*%}
+	{%$parse = []%}
+	{%foreach $tplData.queryparser as $item%}
+		{%foreach $item as $key=>$value%}
+			{%$parse[$key] = $value%}	
+		{%/foreach%}
+	{%/foreach%}
+
+{%/block%}
+
+{%block name="content"%}{%strip%}
+<style>
+.wa-shhouse-gap{
+	margin-left:10px;
+}
+.wa-shhouse-nb{
+	font-size:18px;
+	font-weight:bold;
+}
+.wa-shhouse-filter-price{
+}
+.wa-shhouse-gap2{
+	margin-left:10px;
+}
+.wa-shhouse-price{
+}
+
+.wa-shhouse-scrollor{
+	width:{%$page%}00%;
+	white-space: nowrap;
+}
+
+.wa-shhouse-scrollor li{
+	width:{%1/$page*100%}%;
+	display:inline-block;
+	vertical-align: top;
+	position: relative;
+	left:2px;
+}
+
+.wa-shhouse-scroll-wrapper{
+	width:100%;
+	overflow: hidden;
+	position: relative;
+}
+</style>
+
+<div class="c-row c-gap-top wa-shhouse-select">
+
+	{%$desc = []%}
+	{%$desc.area = '区域'%}
+	{%$desc.price = '价格'%}
+	{%$desc.structure = '户型'%}
+	{%foreach $desc as $key => $value%}
+		<div class="c-span4">
+			<div class="c-dropdown">
+				<select class="wa-shhouse-filter-{%$key%} WA_LOG_TAB">
+					<option value="all">{%$value%}</option>
+					{%if $parse[$key]%}
+					<option selected="selected" >{%$parse[$key]%}</option>
+					{%/if%}
+				</select>
+			</div>
+		</div>
+	{%/foreach%}
+</div>
+
+
+	<div class="c-scroll-wrapper wa-shhouse-scroll-wrapper">
+		<ul class="wa-shhouse-scrollor">
+
+				{%foreach $res as $item%}
+
+					{%if $item@index % 3 == 0%}
+						<li class="wa-shhouse-entity">
+					{%/if%}
+						{%fe_fn_c_box_adaptive_prefix url=$item.list.url class="c-blocka" %}
+						<div class="c-line-bottom">
+							<div class="c-row c-gap-bottom c-gap-top">
+								<div class="c-span3">
+									{%fe_fn_c_img_delay imgsrc={%$item.list.imgurl%}%}
+								</div>
+								<div class="c-span9">
+									<div class="c-color-link c-line-clamp1">{%$item.list.title%}</div>
+									
+									<div class="c-abstract">
+										<span> {%$item.list.area%}</span><span class="wa-shhouse-gap">{%$item.list.place%}</span>
+									</div>
+
+									<div class="c-abstract c-flexbox">
+										<div  style="-webkit-box-flex:1;" class="c-line-clamp1">
+											{%if $item.list.structure%}
+												<span>{%$item.list.structure%}</span>
+											{%/if%}
+
+											{%if $item.list.size%}
+												<span class="wa-shhouse-gap">{%$item.list.size%}</span>
+											{%/if%}
+
+											{%if $item.list.direction%}
+												<span class="wa-shhouse-gap">{%$item.list.direction%}</span>
+											{%/if%}
+										</div>
+										{%$price = preg_replace("/\D/","",$item.list.price)%}
+										<div style="white-space: nowrap;color:#ff6600;"><span class="wa-shhouse-nb">{%$price%}</span>万</div>
+									</div>
+
+									<div class="">
+										{%$tag = $item.list.tag%}
+										{%if $tag && !$tag[0]%}
+											{%$tag = [$tag]%}
+										{%/if%}
+										{%foreach $tag as $item2%}
+											<span class="c-text-box c-text-box-blue {%if !$item2@first%} wa-shhouse-gap2{%/if%}">{%$item2%}</span>
+										{%/foreach%}
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+						{%fe_fn_c_box_adaptive_suffix url=$item.list.url %}
+
+					{%if $item@index % 3 ==2 %}
+						</li>
+					{%/if%}
+				{%/foreach%}
+		</ul>
+	</div>
+	<div class="" style="text-align:center;">
+		<div class="c-scroll-indicator wa-shhouse-scroll-indicator">
+			{%for $index=1 to $page%}
+				<span {%if $index == 1%} class="c-scroll-dotty-now" {%/if%}></span>
+			{%/for%}
+		</div>
+	</div>
+
+<script>
+	A.setup({
+		"info_api":'{%"http://opendata.baidu.com/api.php?resource_id=8151&format=json&ie=utf-8&oe=utf-8&dsp=iphone&tn=wisetpl&need_di=1&query="|getHttpsHost%}',
+		"parse":'{%json_encode($parse)%}',
+		"city":'{%$tplData.result[0].city%}',
+		"pref":'{%$fe_var_tc_jump%}'
+	});	
+</script>
+
+<script data-merge>
+MYJS
+</script>
+{%/strip%}{%/block%}

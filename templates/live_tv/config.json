@@ -1,0 +1,17 @@
+{
+	"data":[
+		{
+			"kvurl":{
+				"query" : "黑暗面",
+				"resource_id" :8079 
+			},
+			"describe": "kv数据",
+			"filename":"data.xml"
+		},
+		{
+			"describe": "mini数据",
+			"filename":"data.xml"
+		}
+	]
+
+}

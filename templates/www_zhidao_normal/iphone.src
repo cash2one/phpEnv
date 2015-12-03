@@ -1,0 +1,63 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+{%block name="data_modifier"%}
+{%/block%}
+
+
+{%block name="title"%}
+{%/block%}
+	
+{%block name="footer"%}
+{%/block%}
+
+{%block name="content"%}
+<style>
+.d1{
+	margin:-10px -15px 0 -15px;
+	height:116px;
+	background-color:#9F6B40;
+}
+.d2{
+	border:1px solid #333;
+	padding-top:40px;
+	position: relative;
+}
+.show{
+	border-radius:50%;
+	background-color:#9F6B40;
+	position: absolute;
+	top:0;
+	width:24px;
+	height:24px;
+	left:50%;
+	margin:-12px 0 0 -12px;
+	z-index:100;
+}
+.wrap{
+	position: relative;
+}
+</style>
+<div class="d1">
+	fdsfdsfdsf
+</div>
+<div class="">
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+</div>
+<div class="wrap">
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+
+	<div class="d2">
+		<div class="show"> </div>
+		更多有关“不可能的任务：失控国度”的信息
+	</div>
+</div>
+
+<script data-merge>
+MYJS
+</script>
+{%/block%}

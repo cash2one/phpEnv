@@ -100,6 +100,7 @@
 <body>
 <div id="page" {%if $onlyshow%} class="onlyshow" {%/if%} >
 
+{%$skin_light=1%}
 
 {%*唯一答案样式*%}
 {%if $onlyshow%}
@@ -114,6 +115,17 @@
 	.towweima{
 		height:0;
 	}
+
+	{%if $skin_light%}
+		#page-hd .cur{
+			color:#fff;
+			background:rgba(255,255,255,.1);
+			border-top:2px solid rgba(255,255,255,.4);
+		}
+		#page-hd .logo{
+			background-image:url(//m.baidu.com/static/search/resultlogo_white.png)!important;
+		}
+	{%/if%}
 	</style>
 {%/if%}
 
@@ -152,7 +164,11 @@
     });
 
 	$('#code').qrcode({width: 64,height: 64,text: "{%$url%}"});
-	$('.result').first().append('<div id="onlyshow-bar" class="skin-light"><section></section><div class="bar"><div class="bar-l"><span>百度智能聚合</span></div><div class="bar-r"><span class="btn-fb"><i class="sicon-fb"></i>反馈</span><span class="slipt">|</span><span class="btn-share"><i class="sicon-share"></i>分享</span></div></div></div>');
+	
+	//唯一答案底部
+	{%if $onlyshow%}
+		$('.result').first().append('<div id="onlyshow-bar" class="skin-light"><section></section><div class="bar"><div class="bar-l"><span>百度智能聚合</span></div><div class="bar-r"><span class="btn-fb"><i class="sicon-fb"></i>反馈</span><span class="slipt">|</span><span class="btn-share"><i class="sicon-share"></i>分享</span></div></div></div>');
+	{%/if%}
     
 </script>
 
