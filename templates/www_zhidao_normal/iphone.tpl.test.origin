@@ -1,0 +1,231 @@
+{%extends "search/searchaladdin/c_base/iphone.tpl"%}
+{%block name="data_modifier"%}
+{%/block%}
+
+
+{%block name="title"%}
+{%/block%}
+	
+{%block name="footer"%}
+{%/block%}
+
+{%block name="content"%}
+<style>
+.head{
+	margin:-10px -15px 0 -15px;
+	height:116px;
+	background-color:#9F6B40;
+}
+.d2{
+	border:1px solid #333;
+	padding-top:40px;
+	position: relative;
+}
+.show{
+	border-radius:50%;
+	background-color:#9F6B40;
+	position: absolute;
+	top:0;
+	width:24px;
+	height:24px;
+	left:50%;
+	margin:-12px 0 0 -12px;
+	z-index:100;
+}
+.wrap{
+	position: relative;
+}
+</style>
+<div class="head">
+	fdsfdsfdsf
+</div>
+<div class="wrap">
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div>fdsfdsfs</div>
+	<div class="d2">
+		<div class="show"> </div>
+		更多有关“不可能的任务：失控国度”的信息
+	</div>
+</div>
+<script>
+	A.init(function(){
+(function(window,undefined){
+	
+	var transition = function(selector){
+		return new init(selector);
+	};
+	window.t = transition;
+
+	var init = transition.prototype.init = function(selector){
+		this.objs = document.querySelector(selector);
+		this.queue = [];
+		this.cssStr = [];
+		this.transform = ['','','',''];
+		this.duringtime = '';
+	};
+	init.prototype = {
+		constructor:init,
+		translate:function(x,y,z){
+			var str = 'translate3d('+ x +','+ y + ',' + z +')';
+			this.transform[0] = str;
+			return this;
+		},
+		
+		rotate : function(angle){
+			var str = 'rotate('+ angle +')'	;
+			this.transform[1] = str;
+			return this;
+		},
+
+		scale :  function(sx,sy){
+			var str = 'scale(' + sx + ',' + sy +')';
+			this.transform[2] = str;
+			return this;
+		},
+
+		skew:function(x,y){
+			var str = 'skew(' + x + ',' + y +')';
+			this.transform[3] = str;
+			return this;
+			
+		},
+
+		set:function(attr){
+			var sum = '';
+			for(var i in attr){
+				sum += i + ':' + attr[i] +";";	
+			}
+			this.cssStr.push(sum);	
+			return this;
+		
+		},
+		
+		then:function(otherObj,waitting){
+			if(this.duringtime === '') return;
+
+			var waitting = ( arguments[1] && typeof arguments[1] == "number") ? arguments[1] : 0;
+
+			this.cssStr.push('transform:'+ this.transform.join(' ') +';');
+			this.queue.push({
+				cssText:'transition-duration:' + this.duringtime + 'ms;' + this.cssStr.join(';'),
+				waitting: waitting,
+				obj: this.objs,
+				during:this.duringtime
+			});
+
+			this.objs = ( arguments[0] && typeof arguments[0] == "string") ? document.querySelector(arguments[0]) : this.objs;
+
+			this.cssStr = [];
+			this.duringtime = '';
+			return this;
+
+		},
+		clear:function(){},
+
+		during:function(duringtime){
+			this.duringtime = duringtime;
+			return this;
+		},
+
+		fire:function(){
+			this.then();
+			var action = this.queue.shift(),
+				self = this;
+			if(!action) return;
+
+			action.obj.style.cssText += action.cssText;
+
+			setTimeout(function(){
+				self.fire();
+			},action.during + action.waitting);
+		},
+		change:function(selector){
+			this.objs = document.querySelector(selector);
+			return this;
+		}
+
+	};
+
+})(window,undefined);
+
+		
+	function start(){
+	
+	}
+
+	var ct = this.container;
+	var pos = $(this.container).offset();
+	var w_width = $(window).width();
+	var w_height = $(window).height();
+	var height_content = $('.wrap').height() + "px";
+	var offset_height = (w_height - pos.height) + "px";
+
+	setTimeout(function(){
+		var str = '<div id="center" style="z-index:1000;width:100%;margin-left:0;margin-top:0;position:absolute;background-color:#fff;top:0;left:0px;"></div>';
+		$('body').append(str);
+	},0);
+
+
+
+	$('.show').on('click',function(){
+		var top = ct.offsetTop - document.body.scrollTop,
+			x = ( -1 * (w_width - pos.width)/2) + "px",
+			y = (-1 * ( ct.offsetTop - document.body.scrollTop ) ) +"px";
+
+		var str = '<div id="mark" style=";opacity:1;transform:translate3d(0,0,0);transform-origin: 10px 10px 0px; position:fixed;top:0;left:0;background-color:red;width:' + w_width + 'px;' + 'height:' + w_height + 'px;><div id="color-s" style="background-color:#9F6B40;height:116px;"></div><div></div></div>';
+		$(str).appendTo('body');
+
+/*
+			setTimeout(function(){
+				t('#mark').set({
+					opacity:1
+				}).during(200).then("#color-s")
+				.set({
+					width:w_width + "px"
+				}).translate(x,0,0).during(150).then()
+				.set({
+					height:offset_height
+				}).translate(x,y,0).during(300).fire();
+			},0);
+
+			setTimeout(function(){
+				document.body.scrollTop = 0;
+				$('#center').append('<div class="center-bar" style="position:fixed;top:0;left:0; background-color:#9F6B40;height:56px;width:100%;"><div style="position:absolute;right:15px;" class="center-close">x</div></div><div id="color-s" style="background-color:#9F6B40;height:'+ offset_height +';"></div><div style="height:' + height_content + ';">fdsffdsfjlajfdlajfd</div>');
+			},650);
+
+
+			setTimeout(function(){
+				t('#mark').set({
+					opacity:0.3,
+				}).during(4000).fire();
+			},650);
+
+
+			setTimeout(function(){
+				$('#page').hide();		
+				$('#mark').remove();
+				$('.center-close').on('touchstart',function(){
+					$('#center').html('');	
+					$('#page').show();
+				});
+			},1200)
+*/
+
+	});
+
+});
+</script>
+{%/block%}

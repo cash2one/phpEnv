@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2015-10-28 10:42:38
+<?php /* Smarty version 3.1.27, created on 2015-12-04 17:45:10
          compiled from "/Users/alan/htdocs/air/templates/core/tpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:14230750665630361e3c68a0_75800485%%*/
+/*%%SmartyHeaderCode:1882123950566160a6447ac1_86300399%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cf09803395e8eee634f406b2f077b43981937c78' => 
     array (
       0 => '/Users/alan/htdocs/air/templates/core/tpl.tpl',
-      1 => 1446000154,
+      1 => 1449222308,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '14230750665630361e3c68a0_75800485',
+  'nocache_hash' => '1882123950566160a6447ac1_86300399',
   'variables' => 
   array (
     'onlyshow' => 0,
@@ -25,13 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_5630361e446b37_89625293',
+  'unifunc' => 'content_566160a648f0d3_85259881',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_5630361e446b37_89625293')) {
-function content_5630361e446b37_89625293 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_566160a648f0d3_85259881')) {
+function content_566160a648f0d3_85259881 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '14230750665630361e3c68a0_75800485';
+$_smarty_tpl->properties['nocache_hash'] = '1882123950566160a6447ac1_86300399';
 ?>
 <!DOCTYPE html>
 <!-- saved from url=(0052)http://fedev.baidu.com/~yangfan16/grid/gridwiki.html -->
@@ -102,12 +102,13 @@ $_smarty_tpl->properties['nocache_hash'] = '14230750665630361e3c68a0_75800485';
    <?php echo '<script'; ?>
  type="text/javascript" src="js/esl.js"><?php echo '</script'; ?>
 >
-   <?php echo '<script'; ?>
+	
+   <!--<?php echo '<script'; ?>
  src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"><?php echo '</script'; ?>
->
-   <?php echo '<script'; ?>
+>-->
+   <!--<?php echo '<script'; ?>
  type="text/javascript" src="js/jquery.qrcode.min.js"><?php echo '</script'; ?>
->
+>-->
     <!-- 使用ESL加载器并完成配置 -->
     <?php echo '<script'; ?>
  type="text/javascript">
@@ -238,7 +239,7 @@ $_smarty_tpl->tpl_vars['item'] = $foreach_item_Sav;
         this.removeAttribute('data-imagedelaysrc');
     });
 
-	$('#code').qrcode({width: 64,height: 64,text: "<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
+//	$('#code').qrcode({width: 64,height: 64,text: "<?php echo $_smarty_tpl->tpl_vars['url']->value;?>
 "});
 	
 	//唯一答案底部

@@ -63,8 +63,9 @@
     </style>
    <script type="text/javascript" src="js/zepto.js"></script> 
    <script type="text/javascript" src="js/esl.js"></script>
-   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-   <script type="text/javascript" src="js/jquery.qrcode.min.js"></script>
+	{%*和zepto冲突了*%}
+   <!--<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>-->
+   <!--<script type="text/javascript" src="js/jquery.qrcode.min.js"></script>-->
     <!-- 使用ESL加载器并完成配置 -->
     <script type="text/javascript">
         require.config({
@@ -163,7 +164,7 @@
         this.removeAttribute('data-imagedelaysrc');
     });
 
-	$('#code').qrcode({width: 64,height: 64,text: "{%$url%}"});
+//	$('#code').qrcode({width: 64,height: 64,text: "{%$url%}"});
 	
 	//唯一答案底部
 	{%if $onlyshow%}

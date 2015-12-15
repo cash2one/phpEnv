@@ -1,12 +1,20 @@
 {%extends "search/searchaladdin/c_base/iphone.tpl"%}
 
 {%block name="data_modifier"%}
+	{%if !$tplData.result[0]%}
+		{%$tplData.result = [$tplData.result]%}
+	{%/if%}
 	{%$r1 = $tplData.result[0]%}
-	{%$tplData.title = $r1.se_class|cat:$r1.show_name%}
-	{%$tplData.url = $r1.url%}
+	{%if !$r1.vlink[0]%}
+		{%$r1.vlink= [$r1.vlink]%}
+		{%$r1.vlink_num_baidu = 1%}
+	{%/if%}
 
+	{%$tplData.title = $r1.se_class|cat:$r1.show_name%}
+
+	{%$tplData.url = $r1.url%}
 	{%if !$r1.actor[0]%}
-		{%$r1.actor[0] = [$r1.actor[0]] %}
+		{%$r1.actor = [$r1.actor] %}
 	{%/if%}
 	
 	{%$actors = implode(' / ',explode('$',$r1.se_actor))%}
@@ -77,6 +85,16 @@
 	padding-right:20px;
 }
 
+
+.wa-vdtv-vlist .c-slink{
+	-webkit-justify-content:flex-start;
+}
+
+.wa-vdtv-vlist .c-slink a{
+	-webkit-box-flex:inherit;
+	-webkit-flex:inherit;
+}
+
 .wa-vdtv-btn{
 	background-color:#0C77E5;
 	color:#fff;
@@ -143,6 +161,9 @@
 				<div class="c-dropdown c-span12">
 					<select class="wa-vdtv-selector">
 						{%$me=floor($r1.vlink_num_baidu/10)%}
+						{%if $r1.vlink_num_baidu%10 == 0%}
+							{%$me = $me - 1%}	
+						{%/if%}
 						{%$i=$me%}
 						{%if $r1.vlink[0].linkcontent == $r1.vlink_num_baidu%}
 							{%$isDaoxu=1%}
@@ -163,8 +184,8 @@
 							{%/if%}
 
 							<option value="{%$i*10%}" {%if $i==0 %} selected=1 {%/if%}>
-								{%if $me== ($r1.vlink_num_baidu - 1)/10%}
-									{%$text="第{%$r1.vlink_num_baidu%}集"%}
+								{%if $from - $to == 0%}
+									{%$text="第{%$to%}集"%}
 								{%else%}
 									{%$text="第{%$to%}-{%$from%}集"%}
 								{%/if%}
@@ -188,12 +209,12 @@
                             <div class="c-slink c-slink-strong">
                         {%/if%}
 
-                        {%fe_fn_c_box_adaptive_prefix  url=$item.linkurl ltj="l" class="wa-wz-tvseries-tab-list-cell wa-wz-tvseries-wa-video-openbox"%}
+						<a class="c-blocka" {%if $item.linkurl%}href="{%alaTcUrl tj5=l src=$item.linkurl%}" {%/if%} >
                             {%$item.linkcontent%}
                             {%if $item.latest %}
                                 <i class="c-text-box c-text-box-red" style="position:absolute;top:0px; right:0px;">新</i>
                             {%/if%}
-                        {%fe_fn_c_box_adaptive_suffix  url=$item.linkurl%}
+						</a>
                         {%if $index % 5 == 4%}
                             </div>
                          {%/if%}
@@ -232,7 +253,7 @@
 A.setup({
 	pref:'{%$fe_var_tc_jump%}',
 	hx_api:'{%"http://opendata.baidu.com/api.php?format=json&ie=utf-8&oe=utf-8&resource_id=11184&tn=wisexmlnew&need_di=1&query={%$r1.se_uri%}"|getHttpsHost%}',
-	vlink_api:'{%"http://opendata.baidu.com/api.php?format=json&ie=utf-8&oe=utf-8&resource_id=6869&from_mid=1&co=vlink&arn=10&need_di=1"|getHttpsHost%}' + '&query='+ '{%$tplData.fetchkey%}' +'&locsign={%$r1.se_locsign%}',
+	vlink_api:'{%"http://opendata.baidu.com/api.php?format=json&ie=utf-8&oe=utf-8&resource_id={%$tplData.resourceid%}&from_mid=1&co=vlink&arn=10&tn=wisetpl&dsp=iphone&need_di=1"|getHttpsHost%}' + '&query='+ '{%$tplData.fetchkey%}' +'&locsign={%$r1.se_locsign%}',
 	expand:'{%$r1.expand_info%}'
 });
 </script>

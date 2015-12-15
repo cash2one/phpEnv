@@ -86,7 +86,11 @@ A.init(function(){
 			if( i % 5 === 0){
 				p += '<div class="c-slink c-slink-strong">';
 			}
-					p += '<a href="' + item.linkurl; p += '">' + item.linkcontent ; if( item.latest ){ p += '<i style="position:absolute;top:0px; right:0px;" class="c-text-box c-text-box-red">新</i>';  }  p+='</a>';
+					p += '<a class="c-blocka"';
+					if(item.linkurl){
+						p += 'href="' + item.linkurl; 
+					}	
+					p +=  '">' + item.linkcontent ; if( item.latest ){ p += '<i style="position:absolute;top:0px; right:0px;" class="c-text-box c-text-box-red">新</i>';  }  p+='</a>';
 
 			if( i % 5 === 4 || i === len - 1){
 				p += '</div>';
@@ -132,8 +136,6 @@ A.init(function(){
 					/*获取侧滑页数据,渲染,绑定事件*/
 					function getHx(fail){
 						var url =  self.data.hx_api;
-						console.log(url);
-						console.log(url);
 						$.ajax({
 							url:url,
 							jsonp:"cb",

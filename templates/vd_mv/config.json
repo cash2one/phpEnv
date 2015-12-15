@@ -1,0 +1,25 @@
+{
+	"data":[
+		{
+			"kvurl":{
+				"query" : "黑暗面",
+				"resource_id" :8079 
+			},
+			"describe": "kv数据",
+			"filename":"data.xml"
+		},
+		{
+			"gssurl":{
+				"gssip":"cp01-aladdin-product-14.epc.baidu.com",
+				"srcids":8080,
+				"query":"康熙来了沈玉琳",
+				"gssport":11111,
+				"--logid":12345678,
+				"--temp": "baidu"
+			},
+			"describe": "mini数据",
+			"filename":"data.xml"
+		}
+	]
+
+}

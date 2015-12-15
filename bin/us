@@ -1,0 +1,3 @@
+#!/bin/sh
+
+vim /Volumes/mywork/odp/conf/ral/services/wise.conf

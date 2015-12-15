@@ -31,8 +31,9 @@ if [ $1 == 'ci' ];then
 elif [ $1 == 'init' ];then
 	if [[ $dir =~ \w*/templates$ ]];then
 		cp -r core/default_project $2		
-		mv ${2}/demoSrcPreProcessor.php ${2}/${2}SrcPreProcessor.php
-		sed -i '' s/demo/${2}/g ${2}/${2}SrcPreProcessor.php #mac 下 -i 参数不同,需要制定备份文件后缀名,这里传入空字符串
+		phpPref=${2//_/''};
+		mv ${2}/demoSrcPreProcessor.php ${2}/${phpPref}SrcPreProcessor.php
+		sed -i '' s/demo/${phpPref}/g ${2}/${phpPref}SrcPreProcessor.php #mac 下 -i 参数不同,需要制定备份文件后缀名,这里传入空字符串
 		sed -i '' s/demo/${2}/g ${2}/pad.tpl #mac 下 -i 参数不同,需要制定备份文件后缀名,这里传入空字符串
 	else
 		echo "error 不在模板根目录"	
