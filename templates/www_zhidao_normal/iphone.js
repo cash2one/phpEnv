@@ -41,7 +41,7 @@ A.init(function(){
 			
 		},
 
-		set:function(attr){
+		set : function(attr){
 			var sum = '';
 			for(var i in attr){
 				sum += i + ':' + attr[i] +";";	

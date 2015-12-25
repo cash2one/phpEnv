@@ -5,13 +5,15 @@
 		{%$tplData.result  = [$tplData.result[0]]%}
 	{%/if%}
 
-    {%$tplData.showLeftText = $tplData.result[0].from%}
-    {%$tplData.showRightUrl = $tplData.result[0].site%}
-    {%$tplData.url = $tplData.result[0].site%}
+    {%$tplData.defaultUrl = 'http://m.fang.com/esf/'%}
+    {%$tplData.url = $tplData.defaultUrl%}
     {%$tplData.title= $tplData.result[0].title%}
+	{%$r1 = $tplData.result[0]%}
+
+	{%$tplData.showLeftText = $tplData.result[0].from%}
+	{%$tplData.showRightUrl = $tplData.result[0].site%}
 
 	{%*显示小于等于9条信息*%}
-	
 	{%if $tplData.resNum > 9%}
 		{%$size = 9%}
 		{%$res = array_slice($tplData.result,0,$size)%}
@@ -22,8 +24,7 @@
 
 	{%$page = ceil($size / 3) %}
 
-
-	{%*精确定位筛选信息*%}
+	{%*精确定位筛选信息,用户query中的筛选信息*%}
 	{%$parse = []%}
 	{%foreach $tplData.queryparser as $item%}
 		{%foreach $item as $key=>$value%}
@@ -31,7 +32,67 @@
 		{%/foreach%}
 	{%/foreach%}
 
+	{%*url筛选信息拼接*%}
+	{%if $parse['area']%}
+		{%*{%$tplData.url = substr($tplData.url,0,strrpos($tplData.url,"/",-2))|cat:"/"|cat:$r1['rule_area']|cat:"/" %}	*%}
+        {%$tplData.url = $tplData.url|cat:$r1['rule_area']|cat:"/"%}
+    {%else%}
+        {%$tplData.url = $tplData.url|cat:$r1['rule_city']|cat:"/"%}
+	{%/if%}
+	{%if $parse['price']%}
+		{%$tplData.url = $tplData.url|cat:$r1['rule_price'] %}	
+	{%/if%}
+	{%if $parse['structure']%}
+		{%$tplData.url = $tplData.url|cat:$r1['rule_structure'] %}	
+	{%/if%}
+
+
 {%/block%}
+
+{%block name="title"%}
+	{%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="title" class="c-blocka wa-shhouse-title"%}
+	{%fe_fn_c_title%}
+	{%fe_fn_c_box_adaptive_suffix url=$tplData.url%}
+{%/block%}
+
+{%block name="foot"%}
+<div class="c-row">
+    <div class="c-span4">
+        <span class="c-color-gray">{%$tplData.showLeftText|escape%}</span>
+        <span class="c-foot-icon c-foot-icon-16 c-foot-icon-16-aladdin c-gap-left-small"></span>
+    </div>
+    
+    {%fe_fn_c_box_adaptive_prefix url=$tplData.url ltj="l" class="c-span8 c-blocka c-moreinfo wa-shhouse-more"%}
+    {%if $tplData.showRightUrl%}
+        {%$tplData.showRightText|escape%}<i class="c-icon">&#xe734</i>
+    {%/if%}    
+    {%fe_fn_c_box_adaptive_suffix url=$tplData.url%}
+</div>
+
+<form class="wa_shhouse_form" style="display:none;" action="//m.baidu.com/pub/search/form_proxy_enc_v2.php" method="get">
+    <input type="hidden" name="w" value="{%$reqData.pn|escape%}_{%$reqData.rn|escape%}_{%$reqData.word|escape%}"/>
+    <input type="hidden" name="t" value="{%$pageData.abct|escape%}"/>
+    {%if $alaData.config.l%}<input type="hidden" name="l" value="{%$alaData.config.l|escape%}"/>{%/if%}
+    <input type="hidden" name="ref" value="{%$pageData.pageRef|escape%}"/>
+    <input type="hidden" name="ssid" value="{%$reqData.ssid|escape%}"/>
+    <input type="hidden" name="uid" value="{%$reqData.uid|escape%}"/>
+    <input type="hidden" name="pu" value="{%$reqData.pu|escape%}"/>
+    <input type="hidden" name="bd_page_type" value="{%$reqData.bd_page_type|escape%}"/>
+    <input type="hidden" name="from" value="{%$reqData.from|escape%}"/>            
+    <input type="hidden" name="lid" value="{%$reqData.lid|escape%}"/>            
+    <input type="hidden" name="order" value="{%$alaData.iteration|escape%}"/>
+	<input type="hidden" name="fm" value="alop"/>
+    <input type="hidden" name="tj" value="{%$alaData.enresourceid%}_{%$alaData.iteration%}_{%$reqData.pn%}_{%$reqData.rn%}_f{%$fe_var_form_index%}"/>
+    {%if $fe_var_waplogo%}<input type="hidden" name="waplogo" value="1"/>{%/if%}
+    <input type="hidden" name="src" class="wa_shhouse_fm_src" value="{%$tplData.url|escape%}{%if $tplData.url|@strpos:"?"%}{%else%}?{%/if%}"/>
+    <input type="hidden" name="EncStr" class="wa_shhouse_fm_enc_str" value='{%$tplData.url|cat:"B@1duW1se"|md5|truncate:6:"":true%}'/>
+    <input type="hidden" name="utf82gbk" value="1"/> 
+    <input type="submit" value="{%$tplData.showRightText|escape%}" class="wa_lvyouroute_submit"/>
+</form>
+
+{%/block%}
+
+
 
 {%block name="content"%}{%strip%}
 <style>
@@ -62,6 +123,9 @@
 	position: relative;
 	left:2px;
 }
+.wa-shhouse-scrollor .c-line-bottom:last-of-type{
+	border:none;
+}
 
 .wa-shhouse-scroll-wrapper{
 	width:100%;
@@ -69,6 +133,7 @@
 	position: relative;
 }
 </style>
+
 
 <div class="c-row c-gap-top wa-shhouse-select">
 
@@ -162,10 +227,11 @@
 
 <script>
 	A.setup({
-		"info_api":'{%"http://opendata.baidu.com/api.php?resource_id=8151&format=json&ie=utf-8&oe=utf-8&dsp=iphone&tn=wisetpl&need_di=1&query="|getHttpsHost%}',
+		"info_api":'{%"http://opendata.baidu.com/api.php?resource_id={%$tplData.resourceid%}&format=json&ie=utf-8&oe=utf-8&dsp=iphone&tn=wisexmlnew&need_di=1&query="|getHttpsHost%}',
 		"parse":'{%json_encode($parse)%}',
 		"city":'{%$tplData.result[0].city%}',
-		"pref":'{%$fe_var_tc_jump%}'
+		"pref":'{%$fe_var_tc_jump%}',
+        "titleUrl":'{%$tplData.defaultUrl%}'
 	});	
 </script>
 
@@ -191,11 +257,12 @@ A.init(function(){
 
 	var self = this,
 		$ct = $(this.container),
-		parse = JSON.parse(self.data.parse),
-		city = this.data.city,
+		parse = JSON.parse(self.data.parse) || {},
+		city = this.data.city || '',
+        titleUrl = this.data.titleUrl || '',
 		tc = new tc_jump(this.data.pref);
 
-	require(['uiamd/iscroll/iscroll'], function (IScroll){
+	require(['uiamd/iscroll/bdscroll'], function (IScroll){
 		var shhouseScroll = new IScroll('.wa-shhouse-scroll-wrapper', {
 			disableMouse: true,
 			scrollX: true,
@@ -294,7 +361,8 @@ A.init(function(){
 							'</div>'+
 
 							'<div class="">';
-								
+							
+							/*插入tag*/
 								var tag = item.list.tag;
 								if(typeof tag === "string" && tag != ""){
 									var temp = {};
@@ -334,7 +402,7 @@ A.init(function(){
 					}
 					dot +=  '></span>';
 				}
-				$ct.find('.wa-shhouse-scroll-indicator').html(dot);
+				$ct.find('.wa-shhouse-scroll-indicator').html(dot).show();
 			}
 
 			return p;
@@ -353,6 +421,8 @@ A.init(function(){
 			var p = '<option value="">'+ desc[sx[i]]  +'</option>' ;
 			var info = data[sx[i]];
 			for(var j = 0 ,len = info.length ; j < len ; j++){
+                /*su小于30的过滤掉*/
+                if(info[j].su < 30 ) continue;
 				var sa = info[j].sa;
 				if(sa === parse[sx[i]]){
 					p += '<option selected="selected" value="'+ sa  +'">' + sa + '</option>';
@@ -365,11 +435,49 @@ A.init(function(){
 
 	}
 
+
+	/*切换筛选项后,切换url*/
+	function changeUrl(city_tag,area_tag,price_tag,structure_tag,sec,di){
+		var url = titleUrl,
+			choose_area = $ct.find('.wa-shhouse-filter-area').val() ? true : false,
+			choose_price = $ct.find('.wa-shhouse-filter-price').val() ? true : false,
+			choose_structre = $ct.find('.wa-shhouse-filter-structure').val() ? true : false;
+
+		if(choose_area && area_tag){
+			/*url = url.substring(0,url.lastIndexOf("/",url.length -2 ) + 1) +  area_tag.trim() + "/";*/
+            url += area_tag.trim() + "/";
+		}else{
+           url += city_tag.trim();
+        }
+
+		if(choose_price && price_tag){
+			url +=  price_tag.trim();
+		}
+
+		if(choose_structre && structure_tag){
+			url +=  structure_tag.trim();
+		}
+
+		/*链接md5加密,插入form*/
+		/*链接如果没有参数则需要加上?*/
+		$ct.find('.wa_shhouse_fm_src').val(url + "?");
+		if (typeof(hexMd5) !== 'undefined') {
+			var encStr = hexMd5(url + 'B@1duW1se').substr(0,6);
+			$ct.find('.wa_shhouse_fm_enc_str').val(encStr);
+		} else {
+			A.js(location.protocol + '//m.baidu.com/static/ala/lvyouroute/md5.js?t=0915',function(){			
+				var encStr = hexMd5(url + 'B@1duW1se').substr(0,6);
+				$ct.find('.wa_shhouse_fm_enc_str').val(encStr);
+			});
+		}
+
+	}
+
 	function add_evt(scrollor){
 		['area','price','structure'].forEach(function(el,index){
 			$ct.find('.wa-shhouse-filter-' + el).on('change',function(){
 				$('.wa-shhouse-scrollor').html('<div class="c-gap-top-large c-loading"> <i class="c-icon">&#xe780</i> <p>加载中…</p> </div>').css({width:"100%"});
-				$('.wa-shhouse-scroll-indicator').html('');
+				$('.wa-shhouse-scroll-indicator').hide();
 				scrollor.refresh();	
 				var query = ['area','price','structure'].reduce(function(sum,el){
 					return sum + $ct.find('.wa-shhouse-filter-' + el).val();
@@ -381,25 +489,34 @@ A.init(function(){
 					if( typeof res['data'][0] === 'object' && res['data'][0].resourceid){
 						var str = build_html(res['data'][0]);
 						$ct.find('.wa-shhouse-scrollor').html(str);
+						var r1 = res['data'][0]['result'][0];
+						changeUrl(r1.rule_city,r1.rule_area,r1.rule_price,r1.rule_structure,r1.sec,r1.di);
 					}else{
 						$ct.find('.wa-shhouse-scrollor').html('<div class="c-color-gray" style="height:120px;text-align:center;line-height:120px;">未找到相关房源,请重新选择筛选条件</div>');
 					}
 
 					setTimeout(function(){
 						scrollor.refresh();	
-					},10);
+					},0);
 
 				});	
 			});
 		});
+
+		$ct.find('.wa-shhouse-more,.wa-shhouse-title').on("click",function(){
+			$ct.find('.wa_shhouse_form').submit();
+			return false;
+		});
+
 	}
 
 	(function init(){
 		setTimeout(function(){
 			getData(city,function(res){
-				console.log(res);
+                console.log(res);
 				add_sx(res['data'][0].otherinfo);
 			});	
+
 		},200);
 	})();
 

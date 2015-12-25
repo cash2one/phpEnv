@@ -12,6 +12,24 @@
 
 	{%$tplData.title = $r1.se_class|cat:$r1.show_name%}
 
+	{%*是否显示别名*%}
+    {%if $r1.show_alias && (strpos($tplData.OriginQuery, $tplData.result[0].show_name) === false)%}
+		{%if !$r1.show_alias[0]%}	
+			{%$r1.show_alias = [$r1.show_alias]%}
+		{%/if%}
+		{%$escaped_alias=""%}
+        {%foreach $r1.show_alias as $item%}
+            {%if strpos($tplData.OriginQuery, $item) !== false%}
+                {%$escaped_alias = $item%}
+				{%break%}
+            {%/if%}
+        {%/foreach%}
+		
+		{%if $escaped_alias != ""%}	
+			{%$tplData.title = $tplData.title|cat:"(又名:"|cat:$escaped_alias|cat:")"%}			
+		{%/if%}
+    {%/if%}
+
 	{%$tplData.url = $r1.url%}
 	{%if !$r1.actor[0]%}
 		{%$r1.actor = [$r1.actor] %}
@@ -118,17 +136,29 @@
 				<div class="c-span4">
 					{%fe_fn_c_img_delay type="l" imgsrc={%$r1.poster%}%}
 				</div>
-				<div class="c-span8">  
-					<div class=""><img class="wa-vdtv-logo" src="{%Utils_Common::timgUrl($r1.site_logo,8,60)%}" />{%$r1.se_sitename%}全集 </div>	
-					<div class=""><span class="c-text-box c-text-box-blue" style="position: relative;top:-1px;">{%if $r1.finish%}已完结{%else%}正在更新{%/if%}</span> {%$r1.totalEp%}集全</div>	
-					<div class="c-line-clamp1">年代:&nbsp;{%$r1.se_year%} <span>&nbsp;地区:&nbsp;{%$r1.area%}</span></div>
-					<div class="c-line-clamp1">类型:&nbsp;{%$type%}</div>
-					<div class="c-line-clamp1">主演:&nbsp;{%$actors%}</div>
+				<div class="c-span8">
+                    {%if $r1.se_sitename%}
+                        <div class=""><img class="wa-vdtv-logo" src="{%Utils_Common::timgUrl($r1.site_logo,8,60)%}" />{%$r1.se_sitename%}全集 </div>
+                    {%/if%}
+                    {%if $r1.totalEp%}
+    					<div class=""><span class="c-text-box c-text-box-blue" style="position: relative;top:-1px;">{%if $r1.finish%}已完结{%else%}正在更新{%/if%}</span> {%$r1.totalEp%}集全</div>
+                    {%/if%}
+                    {%if $r1.se_year && $r1.area%}
+                        <div class="c-line-clamp1">年代:&nbsp;{%$r1.se_year%} <span>&nbsp;地区:&nbsp;{%$r1.area%}</span></div>
+                    {%/if%}
+                    {%if $type%}
+                        <div class="c-line-clamp1">类型:&nbsp;{%$type%}</div>
+                    {%/if%}
+                    {%if $actors%}
+                        <div class="c-line-clamp1">主演:&nbsp;{%$actors%}</div>
+                    {%/if%}
 					<div class="c-row c-gap-top-small">
 						<div class="c-span6">
-							{%fe_fn_c_box_adaptive_prefix url=$r1.vlink[0].linkurl class="c-btn wa-vdtv-btn" %}
-								<span class="c-icon" style="color:#fff;">&#xe732</span>立即播放
-							{%fe_fn_c_box_adaptive_suffix url=$r1.vlink[0].linkurl %}
+                            {%if $r1.vlink[0].linkurl%}
+                                {%fe_fn_c_box_adaptive_prefix url=$r1.vlink[0].linkurl class="c-btn wa-vdtv-btn" %}
+                                    <span class="c-icon" style="color:#fff;">&#xe732</span>立即播放
+                                {%fe_fn_c_box_adaptive_suffix url=$r1.vlink[0].linkurl %}
+                            {%/if%}
 						</div>
 						<div class="c-span6">
 							{%if $reqData.tn=="zbios"%}
@@ -253,7 +283,7 @@
 A.setup({
 	pref:'{%$fe_var_tc_jump%}',
 	hx_api:'{%"http://opendata.baidu.com/api.php?format=json&ie=utf-8&oe=utf-8&resource_id=11184&tn=wisexmlnew&need_di=1&query={%$r1.se_uri%}"|getHttpsHost%}',
-	vlink_api:'{%"http://opendata.baidu.com/api.php?format=json&ie=utf-8&oe=utf-8&resource_id={%$tplData.resourceid%}&from_mid=1&co=vlink&arn=10&tn=wisetpl&dsp=iphone&need_di=1"|getHttpsHost%}' + '&query='+ '{%$tplData.fetchkey%}' +'&locsign={%$r1.se_locsign%}',
+	vlink_api:'{%"http://opendata.baidu.com/api.php?format=json&ie=utf-8&oe=utf-8&resource_id={%$tplData.resourceid%}&from_mid=1&co=vlink&arn=10&tn=wisexmlnew&dsp=iphone&need_di=1"|getHttpsHost%}' + '&query='+ '{%$tplData.fetchkey%}' +'&locsign={%$r1.se_locsign%}',
 	expand:'{%$r1.expand_info%}'
 });
 </script>

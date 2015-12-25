@@ -7,7 +7,7 @@ class Search_Searchaladdin_vdvarietySrcPreProcessor{
      * @return mixed
      */
 	public function process( &$resitem){
-		print_r($resitem);
+
 	}
 }
 		

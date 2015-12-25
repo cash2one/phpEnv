@@ -1,0 +1,3 @@
+A.init(function(){
+	
+});

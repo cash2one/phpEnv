@@ -19,11 +19,12 @@ A.init(function(){
 
 	var self = this,
 		$ct = $(this.container),
-		parse = JSON.parse(self.data.parse),
-		city = this.data.city,
+		parse = JSON.parse(self.data.parse) || {},
+		city = this.data.city || '',
+        titleUrl = this.data.titleUrl || '',
 		tc = new tc_jump(this.data.pref);
 
-	require(['uiamd/iscroll/iscroll'], function (IScroll){
+	require(['uiamd/iscroll/bdscroll'], function (IScroll){
 		var shhouseScroll = new IScroll('.wa-shhouse-scroll-wrapper', {
 			disableMouse: true,
 			scrollX: true,
@@ -122,7 +123,8 @@ A.init(function(){
 							'</div>'+
 
 							'<div class="">';
-								
+							
+							/*插入tag*/
 								var tag = item.list.tag;
 								if(typeof tag === "string" && tag != ""){
 									var temp = {};
@@ -162,7 +164,7 @@ A.init(function(){
 					}
 					dot +=  '></span>';
 				}
-				$ct.find('.wa-shhouse-scroll-indicator').html(dot);
+				$ct.find('.wa-shhouse-scroll-indicator').html(dot).show();
 			}
 
 			return p;
@@ -181,6 +183,8 @@ A.init(function(){
 			var p = '<option value="">'+ desc[sx[i]]  +'</option>' ;
 			var info = data[sx[i]];
 			for(var j = 0 ,len = info.length ; j < len ; j++){
+                /*su小于30的过滤掉*/
+                if(info[j].su < 30 ) continue;
 				var sa = info[j].sa;
 				if(sa === parse[sx[i]]){
 					p += '<option selected="selected" value="'+ sa  +'">' + sa + '</option>';
@@ -193,11 +197,49 @@ A.init(function(){
 
 	}
 
+
+	/*切换筛选项后,切换url*/
+	function changeUrl(city_tag,area_tag,price_tag,structure_tag,sec,di){
+		var url = titleUrl,
+			choose_area = $ct.find('.wa-shhouse-filter-area').val() ? true : false,
+			choose_price = $ct.find('.wa-shhouse-filter-price').val() ? true : false,
+			choose_structre = $ct.find('.wa-shhouse-filter-structure').val() ? true : false;
+
+		if(choose_area && area_tag){
+			/*url = url.substring(0,url.lastIndexOf("/",url.length -2 ) + 1) +  area_tag.trim() + "/";*/
+            url += area_tag.trim() + "/";
+		}else{
+           url += city_tag.trim();
+        }
+
+		if(choose_price && price_tag){
+			url +=  price_tag.trim();
+		}
+
+		if(choose_structre && structure_tag){
+			url +=  structure_tag.trim();
+		}
+
+		/*链接md5加密,插入form*/
+		/*链接如果没有参数则需要加上?*/
+		$ct.find('.wa_shhouse_fm_src').val(url + "?");
+		if (typeof(hexMd5) !== 'undefined') {
+			var encStr = hexMd5(url + 'B@1duW1se').substr(0,6);
+			$ct.find('.wa_shhouse_fm_enc_str').val(encStr);
+		} else {
+			A.js(location.protocol + '//m.baidu.com/static/ala/lvyouroute/md5.js?t=0915',function(){			
+				var encStr = hexMd5(url + 'B@1duW1se').substr(0,6);
+				$ct.find('.wa_shhouse_fm_enc_str').val(encStr);
+			});
+		}
+
+	}
+
 	function add_evt(scrollor){
 		['area','price','structure'].forEach(function(el,index){
 			$ct.find('.wa-shhouse-filter-' + el).on('change',function(){
 				$('.wa-shhouse-scrollor').html('<div class="c-gap-top-large c-loading"> <i class="c-icon">&#xe780</i> <p>加载中…</p> </div>').css({width:"100%"});
-				$('.wa-shhouse-scroll-indicator').html('');
+				$('.wa-shhouse-scroll-indicator').hide();
 				scrollor.refresh();	
 				var query = ['area','price','structure'].reduce(function(sum,el){
 					return sum + $ct.find('.wa-shhouse-filter-' + el).val();
@@ -209,25 +251,34 @@ A.init(function(){
 					if( typeof res['data'][0] === 'object' && res['data'][0].resourceid){
 						var str = build_html(res['data'][0]);
 						$ct.find('.wa-shhouse-scrollor').html(str);
+						var r1 = res['data'][0]['result'][0];
+						changeUrl(r1.rule_city,r1.rule_area,r1.rule_price,r1.rule_structure,r1.sec,r1.di);
 					}else{
 						$ct.find('.wa-shhouse-scrollor').html('<div class="c-color-gray" style="height:120px;text-align:center;line-height:120px;">未找到相关房源,请重新选择筛选条件</div>');
 					}
 
 					setTimeout(function(){
 						scrollor.refresh();	
-					},10);
+					},0);
 
 				});	
 			});
 		});
+
+		$ct.find('.wa-shhouse-more,.wa-shhouse-title').on("click",function(){
+			$ct.find('.wa_shhouse_form').submit();
+			return false;
+		});
+
 	}
 
 	(function init(){
 		setTimeout(function(){
 			getData(city,function(res){
-				console.log(res);
+                console.log(res);
 				add_sx(res['data'][0].otherinfo);
 			});	
+
 		},200);
 	})();
 

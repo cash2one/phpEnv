@@ -1,6 +1,6 @@
 <?php
 
-class Search_Searchaladdin_vdmvSrcPreProcessor{
+class Search_Searchaladdin_codeSrcPreProcessor{
     /**
      * @desc 预处理函数
      * @param $resitem

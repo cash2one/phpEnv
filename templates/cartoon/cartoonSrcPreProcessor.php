@@ -7,7 +7,6 @@ class Search_Searchaladdin_cartoonSrcPreProcessor{
      * @return mixed
      */
 	public function process( &$resitem){
-		print_r($resitem);
 	}
 }
 		
